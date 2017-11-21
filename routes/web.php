@@ -1,5 +1,5 @@
 <?php
-
+    use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,11 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog/edit/{id}',function ($id){
-    return $id;
-});
-Route::get('/blog/destroy/{id}',function($id){
-    return $id;
-});
+Route::get('/blog/edit/{id}' , 'BlogController@edit');
+Route::get('/blog/destroy/{id}' , 'BlogController@destroy');
 
 Route::resource('blog','BlogController');
