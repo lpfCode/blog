@@ -4,7 +4,7 @@
 
 class BlogService{
 
-   public function getById($id){
+   public static function getById($id){
 
        Blog::findById($id);
    }
