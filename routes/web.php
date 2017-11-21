@@ -15,4 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/blog/edit/{id}',function ($id){
+    return $id;
+});
+Route::get('/blog/destroy/{id}',function($id){
+    return $id;
+});
+
 Route::resource('blog','BlogController');

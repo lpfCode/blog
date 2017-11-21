@@ -52,11 +52,11 @@ class BlogController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id){
-        //显示详细
-        $blog = Blog::find($id);
-        return View::make('blogs.show')->with('blog', $blog);
-    }
+//    public function show($id){
+//        //显示详细
+//        $blog = Blog::find($id);
+//        return View::make('blogs.show')->with('blog', $blog);
+//    }
     /**
      * Show the form for editing the specified resource.
      *
