@@ -55,8 +55,7 @@ class BlogController extends Controller{
     public function show($id){
         //显示详细
         $blog = Blog::find($id);
-        return View::make('blogs.show')
-            ->with('blog', $blog);
+        return View::make('blogs.show')->with('blog', $blog);
     }
     /**
      * Show the form for editing the specified resource.
