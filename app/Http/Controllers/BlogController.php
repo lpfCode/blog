@@ -39,7 +39,8 @@ class BlogController extends Controller{
     public function edit(Request $request){
         $id = $request->input('id');
         //编辑
-        $blog = BlogService::getById($id);
+//        $blog = BlogService::getById($id);
+        $blog = Blog::find($id);
         return View::make('blogs.edit')->with('blog',$blog);
     }
 
@@ -53,14 +54,12 @@ class BlogController extends Controller{
             $blog->save();
 
             // redirect
-            Session::flash('message', '更新成功');
             return Redirect::to('blog');
     }
 
     public function destroy($id){
         //删除
         BlogService::deleteById($id);
-        Session::flash('message', '删除成功');
         return Redirect::to('blog');
     }
 }
