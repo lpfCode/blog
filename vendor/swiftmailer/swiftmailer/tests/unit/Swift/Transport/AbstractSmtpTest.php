@@ -70,7 +70,7 @@ abstract class Swift_Transport_AbstractSmtpTest extends \SwiftMailerTestCase
          extensions it supports.  Older SMTP systems which are unable to
          support service extensions and contemporary clients which do not
          require service extensions in the mail session being initiated, MAY
-         use HELO instead of EHLO.  Servers MUST NOT return the extended
+         use HELO instead of EHLO.  Service MUST NOT return the extended
          EHLO-style response to a HELO command.  For a particular connection
          attempt, if the server returns a "command not recognized" response to
          EHLO, the client SHOULD be able to fall back and send HELO.

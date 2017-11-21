@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/blog/edit/{id}' , 'BlogController@edit');
-Route::get('/blog/destroy/{id}' , 'BlogController@destroy');
+Route::get('/blog/edit' , 'BlogController@edit');
+Route::get('/blog/destroy' , 'BlogController@destroy');
 
 Route::resource('blog','BlogController');

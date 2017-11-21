@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Service\BlogService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\Controller;
@@ -63,9 +64,10 @@ class BlogController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id){
+    public function edit(Request $request){
+        $id = $request->input('id');
         //编辑
-        $blog = Blog::find($id);
+        $blog = BlogService::getById($id);
         return View::make('blogs.edit')->with('blog',$blog);
     }
     /**
@@ -96,8 +98,7 @@ class BlogController extends Controller{
      */
     public function destroy($id){
         //删除
-        $blog = Blog::find(id);
-        $blog->delete();
+        BlogService::deleteById($id);
         Session::flash('message', '删除成功');
         return Redirect::to('blog');
     }
