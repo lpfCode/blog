@@ -34,15 +34,15 @@ class BlogController extends Controller{
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(){
+    public function store(Request $request){
         //表单提交（添加）
             // store
+        
         $blog = new Blog;
-        $blog->name       = Input::get('name');
-        $blog->email      = Input::get('email');
-        $blog->blog_level = Input::get('blog_level');
-        $blog->save();
-
+        $blog->name       = $request->input('name');
+        $blog->emai       = $request->input('email');
+        $blog->blog_level = $request->input('blog_level');
+        Blog::save($blog->toArray());
         // redirect
         Session::flash('message', '添加成功');
         return Redirect::to('blog');
@@ -68,6 +68,7 @@ class BlogController extends Controller{
         $id = $request->input('id');
         //编辑
         $blog = BlogService::getById($id);
+        Blog::find($id);
         return View::make('blogs.edit')->with('blog',$blog);
     }
     /**
