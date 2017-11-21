@@ -37,7 +37,7 @@
                 <td>{{ $value->email }}</td>
                 <td>{{ $value->blog_level }}</td>
                 <td>
-                    <a class="btn btn-small btn-success" href="{{ URL::to('blog/' . $value->id) . '/destroy' }}">删除</a>
+                    <a class="btn btn-small btn-success" href="{{ URL::to('blog/destroy' . $value->id) }}">删除</a>
                     <a class="btn btn-small btn-info" href="{{ URL::to('blog/' . $value->id . '/edit') }}">编辑</a>
                 </td>
             </tr>

@@ -16,7 +16,7 @@
         </ul>
     </nav>
     <h1>添加博客</h1>
-    <table border="1" style="width: 100%;height: 600px">
+    <table class="table table-striped table-bordered">
         <form method="post" action="/blog/store">
             <tr>
                 <td>用户名称：</td>
@@ -37,7 +37,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <input type="submit" value="提交">
                 </td>
             </tr>

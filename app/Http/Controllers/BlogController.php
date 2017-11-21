@@ -35,32 +35,16 @@ class BlogController extends Controller{
      */
     public function store(){
         //表单提交（添加）
-        //validate
-        // read more on validation at http://laravel.com/docs/validation
-        $rules = array(
-            'name'       => 'required',
-            'email'      => 'required|email',
-            'blog_level' => 'required|numeric'
-        );
-        $validator = Validator::make(Input::all(), $rules);
-
-        // process the login
-        if ($validator->fails()) {
-            return Redirect::to('blog/create')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
             // store
-            $blog = new Nerd;
-            $blog->name       = Input::get('name');
-            $blog->email      = Input::get('email');
-            $blog->blog_level = Input::get('blog_level');
-            $blog->save();
+        $blog = new Blog;
+        $blog->name       = Input::get('name');
+        $blog->email      = Input::get('email');
+        $blog->blog_level = Input::get('blog_level');
+        $blog->save();
 
-            // redirect
-            Session::flash('message', '添加成功');
-            return Redirect::to('blog');
-        }
+        // redirect
+        Session::flash('message', '添加成功');
+        return Redirect::to('blog');
     }
     /**
      * Display the specified resource.
@@ -92,21 +76,8 @@ class BlogController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id){
+    public function update($id){
         //表单提交（编辑）
-        $rules = array(
-            'name'       => 'required',
-            'email'      => 'required|email',
-            'blog_level' => 'required|numeric'
-        );
-        $validator = Validator::make(Input::all(), $rules);
-
-        // process the login
-        if ($validator->fails()) {
-            return Redirect::to('blog/' . $id . '/edit')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {
             // store
             $blog = Nerd::find($id);
             $blog->name       = Input::get('name');
@@ -117,8 +88,6 @@ class BlogController extends Controller{
             // redirect
             Session::flash('message', '更新成功');
             return Redirect::to('blog');
-        }
-
     }
     /**
      * Remove the specified resource from storage.
