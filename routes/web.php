@@ -17,5 +17,5 @@ Route::get('/', function () {
 
 Route::get('/blog/edit' , 'BlogController@edit');
 Route::get('/blog/destroy' , 'BlogController@destroy');
-
+Route::post('/blog/store','BlogController@store');
 Route::resource('blog','BlogController');

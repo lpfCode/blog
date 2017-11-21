@@ -4,11 +4,12 @@
 
 class BlogService{
 
-   public function getById($id){
+   public static function getById($id){
 
-       Blog::findById($id);
+       $a = (new Blog())->findById($id);
+        dd($a);
    }
-   public function deleteById($id){
+   public static function deleteById($id){
 
        Blog::deleteById($id);
    }

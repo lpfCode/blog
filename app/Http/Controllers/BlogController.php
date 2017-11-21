@@ -37,12 +37,13 @@ class BlogController extends Controller{
     public function store(Request $request){
         //表单提交（添加）
             // store
-        
-        $blog = new Blog;
-        $blog->name       = $request->input('name');
-        $blog->emai       = $request->input('email');
-        $blog->blog_level = $request->input('blog_level');
-        Blog::save($blog->toArray());
+
+        $blog = [
+            'name'  => $request->input('name'),
+            'email'  => $request->input('email'),
+            'blog_level'  => $request->input('blog_level'),
+        ];
+        Blog::save($blog);
         // redirect
         Session::flash('message', '添加成功');
         return Redirect::to('blog');
