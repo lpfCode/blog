@@ -16,31 +16,33 @@
         </ul>
     </nav>
     <h1>编辑: {{ $blog->name }}</h1>
-
-    <!-- if there are creation errors, they will show here -->
-    {{ HTML::ul($errors->all()) }}
-
-    {{ Form::model($blog, array('route' => array('blogs.update', $blog->id), 'method' => 'POST')) }}
-
-    <div class="form-group">
-        {{ Form::label('name', '用户名称') }}
-        {{ Form::text('name', null, array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('email', '用户邮箱') }}
-        {{ Form::email('email', null, array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('blog_level', '博客等级') }}
-        {{ Form::select('blog_level', array('0' => '选择', '1' => '1', '2' => '2', '3' => '3'), null, array('class' => 'form-control')) }}
-    </div>
-
-    {{ Form::submit('提交', array('class' => 'btn btn-primary')) }}
-
-    {{ Form::close() }}
-
+    <table border="1" style="width: 100%;height: 600px">
+        <form method="post" action="/blog/update/{{ $blog->id }}">
+            <tr>
+                <td>用户名称：</td>
+                <td><input type="text" name="name" value="{{ $blog->name }}"></td>>
+            </tr>
+            <tr>
+                <td>用户邮箱：</td>
+                <td><input type="text" name="email" value="{{ $blog->email }}"></td>
+            </tr>
+            <tr>
+                <td>博客等级：</td>
+                <td>
+                    <select name="blog_level">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="提交">
+                </td>
+            </tr>
+        </form>
+    </table>
 </div>
 </body>
 </html>

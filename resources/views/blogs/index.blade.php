@@ -16,9 +16,9 @@
         </ul>
     </nav>
     <h1>博客列表</h1>
-    {{--@if (Session::has('message'))--}}
-        {{--<div class="alert alert-info">{{ Session::get('message') }}</div>--}}
-    {{--@endif--}}
+    @if (Session::has('message'))
+        <div class="alert alert-info">{{ Session::get('message') }}</div>
+    @endif
     <table class="table table-striped table-bordered">
         <thead>
         <tr>
@@ -37,12 +37,7 @@
                 <td>{{ $value->email }}</td>
                 <td>{{ $value->blog_level }}</td>
                 <td>
-                    {{ Form::open(array('url' => 'blog/' . $value->id, 'class' => 'pull-right')) }}
-                    {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::submit('删除', array('class' => 'btn btn-warning')) }}
-                    {{ Form::close() }}
-
-                    <a class="btn btn-small btn-success" href="{{ URL::to('blog/' . $value->id) }}">查看</a>
+                    <a class="btn btn-small btn-success" href="{{ URL::to('blog/' . $value->id) . '/destroy' }}">删除</a>
                     <a class="btn btn-small btn-info" href="{{ URL::to('blog/' . $value->id . '/edit') }}">编辑</a>
                 </td>
             </tr>

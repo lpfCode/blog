@@ -12,31 +12,37 @@
         </div>
         <ul class="nav navbar-nav">
             <li><a href="{{ URL::to('blog') }}">更多</a></li>
-            <li><a href="{{ URL::to('blog/create') }}">添加</a>
+            <li><a href="{{ URL::to('blog/create') }}">重填</a>
         </ul>
     </nav>
     <h1>添加博客</h1>
-
-    <!-- if there are creation errors, they will show here -->
-    {{ HTML::ul($errors->all()) }}
-
-    {{ Form::open(array('url' => 'blog')) }}
-    <div class="form-group">
-        {{ Form::label('name', '名字') }}
-        {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
-    </div>
-    <div class="form-group">
-        {{ Form::label('email', '邮箱') }}
-        {{ Form::email('email', Input::old('email'), array('class' => 'form-control')) }}
-    </div>
-    <div class="form-group">
-        {{ Form::label('blog_level', '博客等级') }}
-        {{ Form::select('blog_level', array('0' => '选择', '1' => '1', '2' => '2', '3' => '3'), Input::old('blog_level'), array('class' => 'form-control')) }}
-    </div>
-    {{ Form::submit('提交', array('class' => 'btn btn-primary')) }}
-
-    {{ Form::close() }}
-
+    <table border="1" style="width: 100%;height: 600px">
+        <form method="post" action="/blog/store">
+            <tr>
+                <td>用户名称：</td>
+                <td><input type="text" name="name"></td>>
+            </tr>
+            <tr>
+                <td>用户邮箱：</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td>博客等级：</td>
+                <td>
+                    <select name="blog_level">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="提交">
+                </td>
+            </tr>
+        </form>
+    </table>
 </div>
 </body>
 </html>
