@@ -8,7 +8,7 @@
 <div class="container">
     <nav class="navbar navbar-inverse">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ URL::to('blog') }}">提醒</a>
+            <a class="navbar-brand" href="{{ URL::to('/') }}">首页</a>
         </div>
         <ul class="nav navbar-nav">
             <li><a href="{{ URL::to('blog') }}">更多</a></li>
@@ -37,6 +37,11 @@
                 <td>{{ $value->email }}</td>
                 <td>{{ $value->blog_level }}</td>
                 <td>
+                    {{ Form::open(array('url' => 'blog/' . $value->id, 'class' => 'pull-right')) }}
+                    {{ Form::hidden('_method', 'DELETE') }}
+                    {{ Form::submit('删除', array('class' => 'btn btn-warning')) }}
+                    {{ Form::close() }}
+
                     <a class="btn btn-small btn-success" href="{{ URL::to('blog/' . $value->id) }}">查看</a>
                     <a class="btn btn-small btn-info" href="{{ URL::to('blog/' . $value->id . '/edit') }}">编辑</a>
                 </td>
