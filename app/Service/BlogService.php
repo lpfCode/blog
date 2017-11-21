@@ -4,7 +4,7 @@
 
 class BlogService{
 
-   public static function getById($id){
+   public function getById($id){
 
        $a = (new Blog())->findById($id);
         dd($a);

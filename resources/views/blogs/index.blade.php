@@ -38,7 +38,7 @@
                 <td>{{ $value->blog_level }}</td>
                 <td>
                     <a class="btn btn-small btn-success" href="/blog/destroy?id={{ $value->id }}">删除</a>
-                    <a class="btn btn-small btn-info" href="/blog/edit/{{ $value->id }}">编辑</a>
+                    <a class="btn btn-small btn-info" href="/blog/edit?id={{ $value->id }}">编辑</a>
                 </td>
             </tr>
         @endforeach

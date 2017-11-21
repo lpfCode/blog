@@ -11,9 +11,6 @@ class Blog extends Model{
     public function findById($id){
 
         return $this->where('id',$id)->first()->toArray();
-//        $id = "';grant sss -pxxx;'";
-//        $sql = "select * ftom tab where id=?"
-//            $this->runSql($sql, $sql_params);
     }
     //删除
     public function deleteById($id){
