@@ -26,18 +26,13 @@ class BlogController extends Controller{
     public function store(Request $request){
         //表单提交（添加）
             // store
-//        $db = new Blog();
+        $db = new Blog();
         $blog = [
             'name'  => $request->input('name'),
             'email'  => $request->input('email'),
             'blog_level'  => $request->input('blog_level'),
         ];
-//        $db->save($blog);
-        $blogs = new Blog();
-//        $blog->name       = $request->input('name');
-//        $blog->email      = $request->input('email');
-//        $blog->blog_level = $request->input('blog_level');
-        $blogs->insert($blog);
+        $db->insert($blog);
         return Redirect::to('/blog');
     }
 
@@ -56,14 +51,15 @@ class BlogController extends Controller{
             $blog->email      = $request->input('email');
             $blog->blog_level = $request->input('blog_level');
             $blog->save();
-
             // redirect
             return Redirect::to('blog');
     }
 
-    public function destroy($id){
+    public function destroy(Request $request){
         //删除
-        BlogService::deleteById($id);
+        $id = $request->input('id');
+        $blog = Blog::find($id);
+        $blog->delete();
         return Redirect::to('blog');
     }
 }
