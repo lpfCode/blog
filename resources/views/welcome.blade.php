@@ -89,6 +89,7 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="{{ URL::to('blog') }}">博客</a>
+                    <a href="{{ URL::to('db') }}">数据库基本操作</a>
                 </div>
             </div>
         </div>
