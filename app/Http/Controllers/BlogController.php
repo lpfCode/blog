@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Blog;
 use App\Service\BlogService;
 use Illuminate\Http\Request;
@@ -33,7 +32,8 @@ class BlogController extends Controller{
             'blog_level'  => $request->input('blog_level'),
         ];
         Blog::save($blog);
-        return Redirect::to('blog');
+        dd($blog);
+        return Redirect::to('/blog');
     }
 
     public function edit(Request $request){
