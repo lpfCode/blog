@@ -22,7 +22,7 @@
             <tr>
                 <td>用户名称：</td>
                 <input style="display: none" type="text" name="id" value="{{ $blog->id }}">
-                <td><input type="text" name="name" value="{{ $blog->name }}"></td>>
+                <td><input type="text" name="name" value="{{ $blog->name }}"></td>
             </tr>
             <tr>
                 <td>用户邮箱：</td>
@@ -32,9 +32,10 @@
                 <td>博客等级：</td>
                 <td>
                     <select name="blog_level">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        {{--  有@标识符之后，就会用PHP解释器解析@if和@endif之间的代码就不用加{{}}  --}}
+                        <option value="1" @if($blog->blog_level ==1) selected @endif>1</option>
+                        <option value="2" @if($blog->blog_level ==2) selected @endif>2</option>
+                        <option value="3" @if($blog->blog_level ==3) selected @endif>3</option>
                     </select>
                 </td>
             </tr>

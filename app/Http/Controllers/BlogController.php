@@ -33,6 +33,7 @@ class BlogController extends Controller{
             'blog_level'  => $request->input('blog_level'),
         ];
         $db->insert($blog);
+        Session::flash('message', '添加成功');
         return Redirect::to('/blog');
     }
 
@@ -51,7 +52,7 @@ class BlogController extends Controller{
             $blog->email      = $request->input('email');
             $blog->blog_level = $request->input('blog_level');
             $blog->save();
-            // redirect
+            Session::flash('message', '更新成功');
             return Redirect::to('blog');
     }
 
@@ -60,6 +61,7 @@ class BlogController extends Controller{
         $id = $request->input('id');
         $blog = Blog::find($id);
         $blog->delete();
+        Session::flash('message', '删除成功');
         return Redirect::to('blog');
     }
 }

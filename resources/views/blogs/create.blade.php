@@ -21,7 +21,7 @@
             {{ csrf_field() }}
             <tr>
                 <td>用户名称：</td>
-                <td><input type="text" name="name"></td>>
+                <td><input type="text" name="name"></td>
             </tr>
             <tr>
                 <td>用户邮箱：</td>
