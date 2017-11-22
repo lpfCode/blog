@@ -27,17 +27,17 @@ class BlogController extends Controller{
         //表单提交（添加）
             // store
 //        $db = new Blog();
-//        $blog = [
-//            'name'  => $request->input('name'),
-//            'email'  => $request->input('email'),
-//            'blog_level'  => $request->input('blog_level'),
-//        ];
+        $blog = [
+            'name'  => $request->input('name'),
+            'email'  => $request->input('email'),
+            'blog_level'  => $request->input('blog_level'),
+        ];
 //        $db->save($blog);
-        $blog = new Blog();
-        $blog->name       = $request->input('name');
-        $blog->email      = $request->input('email');
-        $blog->blog_level = $request->input('blog_level');
-        $blog->save();
+        $blogs = new Blog();
+//        $blog->name       = $request->input('name');
+//        $blog->email      = $request->input('email');
+//        $blog->blog_level = $request->input('blog_level');
+        $blogs->insert($blog);
         return Redirect::to('/blog');
     }
 
