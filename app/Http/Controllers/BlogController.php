@@ -32,7 +32,7 @@ class BlogController extends Controller{
             'email'  => $request->input('email'),
             'blog_level'  => $request->input('blog_level'),
         ];
-        Blog::save($blog);
+        $blog->save();
         dd($blog);
         return Redirect::to('/blog');
     }
@@ -50,9 +50,10 @@ class BlogController extends Controller{
             // store
             $id = $request->input('id');
             $blog = Blog::find($id);
-            $blog->name       = Input::get('name');
-            $blog->email      = Input::get('email');
-            $blog->blog_level = Input::get('blog_level');
+            dd($blog);
+            $blog->name       = $request->input('name');
+            $blog->email      = $request->input('email');
+            $blog->blog_level = $request->input('blog_level');
             $blog->save();
 
             // redirect
