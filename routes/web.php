@@ -18,9 +18,9 @@
 //    return view('welcome');
 //});
 Route::get('/', 'WelcomeController@index');
-//Route::get('/blog' , 'BlogController@index');
-//Route::get('/blog/edit' , 'BlogController@edit');
-//Route::get('/blog/destroy' , 'BlogController@destroy');
-//Route::get('/blog/create' , 'BlogController@create');
-//Route::post('/blog/store' , 'BlogController@store');
-//Route::post('/blog/update' , 'BlogController@update');
+Route::get('/blog', 'BlogController@index');
+Route::get('/blog/edit', 'BlogController@edit');
+Route::get('/blog/destroy', 'BlogController@destroy');
+Route::get('/blog/create', 'BlogController@create');
+Route::post('/blog/store', 'BlogController@store');
+Route::post('/blog/update', 'BlogController@update');
