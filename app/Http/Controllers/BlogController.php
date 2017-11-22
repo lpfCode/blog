@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Service\BlogService;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
@@ -44,9 +45,10 @@ class BlogController extends Controller{
         return View::make('blogs.edit')->with('blog',$blog);
     }
 
-    public function update($id){
+    public function update(Request $request){
         //表单提交（编辑）
             // store
+            $id = $request->input('id');
             $blog = Blog::find($id);
             $blog->name       = Input::get('name');
             $blog->email      = Input::get('email');
@@ -54,7 +56,8 @@ class BlogController extends Controller{
             $blog->save();
 
             // redirect
-            return Redirect::to('blog');
+            Route::redirect('/blog');
+//            return Redirect::to('blog');
     }
 
     public function destroy($id){

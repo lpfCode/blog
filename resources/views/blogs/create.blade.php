@@ -18,6 +18,7 @@
     <h1>添加博客</h1>
     <table class="table table-striped table-bordered">
         <form method="post" action="/blog/store">
+            {{ csrf_field() }}
             <tr>
                 <td>用户名称：</td>
                 <td><input type="text" name="name"></td>>

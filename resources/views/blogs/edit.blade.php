@@ -17,9 +17,11 @@
     </nav>
     <h1>编辑: {{ $blog->name }}</h1>
     <table class="table table-striped table-bordered">
-        <form method="post" action="/blog/update/{{ $blog->id }}">
+        <form method="post" action="/blog/update">
+            {{csrf_field()}}
             <tr>
                 <td>用户名称：</td>
+                <input style="display: none" type="text" name="id" value="{{ $blog->id }}">
                 <td><input type="text" name="name" value="{{ $blog->name }}"></td>>
             </tr>
             <tr>
