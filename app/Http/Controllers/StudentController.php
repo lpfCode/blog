@@ -77,7 +77,7 @@ class StudentController extends Controller
             }
         }
 //        var_dump($result);
-        if($result.isEmpty()){
+        if($result==null){
             Session::flash('message','查询的内容为空');
             return Redirect::to('st');
         }else{
