@@ -56,7 +56,6 @@
                     <td>操作</td>
                 </tr>
             </thead>
-            dd({{$studentInfo}})
             <tbody>
                 @foreach($studentInfo as $key => $value)
                     <tr>
