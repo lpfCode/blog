@@ -76,8 +76,13 @@ class StudentController extends Controller
                 $result = StudentService::getInstance()->selectByParam('score',$value);
             }
         }
-        var_dump($result);
-//        return View::make('students.show')->with('studentInfo',$result);
+//        var_dump($result);
+        if($result==null){
+            Session::flash('message','查询的内容不存在');
+            return Redirect::to('st');
+        }else{
+            return View::make('students.show')->with('studentInfo',$result);
+        }
 //        return View::make(students.show)->with('studentInfo',$result)->with('key',$param)->with('value',$value);
     }
 }
