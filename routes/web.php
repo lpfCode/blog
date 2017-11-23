@@ -30,4 +30,4 @@ Route::get('/st/destroy', 'StudentController@destroy');
 Route::get('/st/create', 'StudentController@create');
 Route::post('/st/store', 'StudentController@store');
 Route::post('/st/update', 'StudentController@update');
-Route::post('/st/tjcx', 'StudentController@tjcx');
+Route::get('/st/tjcx', 'StudentController@tjcx');
