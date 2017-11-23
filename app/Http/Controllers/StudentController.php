@@ -15,7 +15,7 @@ class StudentController extends Controller
     //查寻全部
     public function index(){
         $st = Student::all();
-        return View::make('students.show')->with('data',['info'=>$st]);
+        return View::make('students.show')->with('data',['info'=>$st,'key'=>null,'value'=>null]);
     }
     //新增跳转
     public function create(){
