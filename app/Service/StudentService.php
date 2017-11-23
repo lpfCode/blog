@@ -21,21 +21,25 @@ class StudentService{
          return self::$_instance;
      }
 //     单例模式定义结束
+//     根据字段查询记录
      public function selectByParam($param,$value){
 
 //         return $this->_stuModel->findByParam($param,$value);
          return Student::getInstance()->findByParam($param,$value);
      }
+//     存储 数组格式
      public function addByArray($array){
 
 //         $this->_stuModel->saveByArray($array);
           Student::getInstance()->saveByArray($array);
      }
+//     跟新 Model格式
      public function modifyByModel(Student $student){
 
 //         $this->_stuModel->saveByModel($student);
           Student::getInstance()->updateByModel($student);
      }
+//     按照字段删除记录
      public function deleteByParam($param,$value){
 
          Student::getInstance()->removeByParam($param,$value);
