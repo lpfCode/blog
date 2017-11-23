@@ -76,8 +76,8 @@ class StudentController extends Controller
                 $result = StudentService::getInstance()->selectByParam('score',$value);
             }
         }
-        var_dump($result);
-        if($result==null){
+//        var_dump($result);
+        if($result.isEmpty()){
             Session::flash('message','查询的内容为空');
             return Redirect::to('st');
         }else{
