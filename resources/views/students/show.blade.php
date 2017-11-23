@@ -57,8 +57,8 @@
                 </tr>
             </thead>
             <tbody>
+                var_dump($stuentInfo);
                 @foreach($studentInfo as $key => $value)
-                    {{--{{dd($value->id)}}--}}
                     <tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
