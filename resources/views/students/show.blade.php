@@ -20,7 +20,7 @@
                 <div class="alert alert-info">{{ Session::get('message') }}</div>
             @endif
         <div>
-            <form method="post" action="/st/tjcx">
+            <form method="get" action="/st/tjcx">
                 {{ csrf_field() }}
                 <tr>
                     {{--<td>关键字：--}}
