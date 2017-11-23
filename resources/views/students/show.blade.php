@@ -25,10 +25,10 @@
                 <tr>
                     <td>关键字：
                         <select name="key">
-                            <option value="name" @if($data['info']=='name') selected @endif>姓名</option>
-                            <option value="age" @if($data['info']=='age') selected @endif>年龄</option>
-                            <option value="obj" @if($data['info']=='obj') selected @endif>科目</option>
-                            <option value="score" @if($data['info']=='score') selected @endif>分数</option>
+                            <option value="name" @if($data['key']=='name') selected @endif>姓名</option>
+                            <option value="age" @if($data['key']=='age') selected @endif>年龄</option>
+                            <option value="obj" @if($data['key']=='obj') selected @endif>科目</option>
+                            <option value="score" @if($data['key']=='score') selected @endif>分数</option>
                         </select>
                     </td>
                     <td><input type="text" name="value" value="{{$data['value']}}"></td>
