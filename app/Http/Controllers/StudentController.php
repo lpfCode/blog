@@ -30,7 +30,7 @@ class StudentController extends Controller
             'score'=>$request->input('score')
         ];
         StudentService::getInstance()->addByArray($student);
-        Session::flash('message','add successful');
+        Session::flash('message','添加成功');
         return Redirect::to('st');
     }
     //编辑跳转回显
@@ -48,7 +48,7 @@ class StudentController extends Controller
         $st->obj = $request->input('obj');
         $st->score = $request->input('score');
         StudentService::getInstance()->modifyByModel($st);
-        Session::flash('message','update successful');
+        Session::flash('message','更新成功');
         return Redirect::to('st');
     }
     //删除
@@ -76,7 +76,7 @@ class StudentController extends Controller
                 $result = StudentService::getInstance()->selectByParam('score',$value);
             }
         }
-//        var_dump($result);
+        var_dump($result);
         if($result==null){
             Session::flash('message','查询的内容为空');
             return Redirect::to('st');
