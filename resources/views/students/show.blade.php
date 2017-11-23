@@ -23,15 +23,24 @@
             <form method="post" action="/st/tjcx">
                 {{ csrf_field() }}
                 <tr>
+                    {{--<td>关键字：--}}
+                        {{--<select name="key">--}}
+                            {{--<option value="name" @if($key=='name') selected @endif>姓名</option>--}}
+                            {{--<option value="age" @if($key=='age') selected @endif>年龄</option>--}}
+                            {{--<option value="obj" @if($key=='obj') selected @endif>科目</option>--}}
+                            {{--<option value="score" @if($key=='score') selected @endif>分数</option>--}}
+                        {{--</select>--}}
+                    {{--</td>--}}
+                    {{--<td><input type="text" name="value" value="{{$value}}"></td>--}}
                     <td>关键字：
                         <select name="key">
-                            <option value="name" @if($key=='name') selected @endif>姓名</option>
-                            <option value="age" @if($key=='age') selected @endif>年龄</option>
-                            <option value="obj" @if($key=='obj') selected @endif>科目</option>
-                            <option value="score" @if($key=='score') selected @endif>分数</option>
+                            <option value="name">姓名</option>
+                            <option value="age">年龄</option>
+                            <option value="obj">科目</option>
+                            <option value="score">分数</option>
                         </select>
                     </td>
-                    <td><input type="text" name="value" value="{{$value}}"></td>
+                    <td><input type="text" name="value"></td>
                     <td><input type="submit" value="检索"></td>
                 </tr>
             </form>
