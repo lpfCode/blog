@@ -62,7 +62,20 @@ class StudentController extends Controller
     public function tjcx(Request $request){
         $param = $request->input('key');
         $value = $request->input('value');
-        $result = StudentService::getInstance()->selectByParam('name',$value);
+        if($value==null){
+            Session::flash('message','请填入要查询的值');
+            return Redirect::to('st');
+        }else{
+            if($param==name){
+                $result = StudentService::getInstance()->selectByParam('name',$value);
+            }elseif ($param==obj){
+                $result = StudentService::getInstance()->selectByParam('obj',$value);
+            }elseif ($param==age){
+                $result = StudentService::getInstance()->selectByParam('age',$value);
+            }else{
+                $result = StudentService::getInstance()->selectByParam('score',$value);
+            }
+        }
         var_dump($result);
 //        return View::make('students.show')->with('studentInfo',$result);
 //        return View::make(students.show)->with('studentInfo',$result)->with('key',$param)->with('value',$value);
