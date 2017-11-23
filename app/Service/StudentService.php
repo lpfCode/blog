@@ -29,15 +29,15 @@ class StudentService{
      public function addByArray($array){
 
 //         $this->_stuModel->saveByArray($array);
-         return Student::getInstance()->saveByArray($array);
+          Student::getInstance()->saveByArray($array);
      }
      public function modifyByModel(Student $student){
 
 //         $this->_stuModel->saveByModel($student);
-         return Student::getInstance()->updateByModel();
+          Student::getInstance()->updateByModel($student);
      }
      public function deleteByParam($param,$value){
 
-         return Student::getInstance()->removeByParam($param,$value);
+         Student::getInstance()->removeByParam($param,$value);
      }
 }
