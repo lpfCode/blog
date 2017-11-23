@@ -66,11 +66,11 @@ class StudentController extends Controller
             Session::flash('message','请填入要查询的值');
             return Redirect::to('st');
         }else{
-            if($param==name){
+            if($param=='name'){
                 $result = StudentService::getInstance()->selectByParam('name',$value);
-            }elseif ($param==obj){
+            }elseif ($param=='obj'){
                 $result = StudentService::getInstance()->selectByParam('obj',$value);
-            }elseif ($param==age){
+            }elseif ($param=='age'){
                 $result = StudentService::getInstance()->selectByParam('age',$value);
             }else{
                 $result = StudentService::getInstance()->selectByParam('score',$value);
