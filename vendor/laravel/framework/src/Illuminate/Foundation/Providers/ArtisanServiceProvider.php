@@ -847,7 +847,7 @@ class ArtisanServiceProvider extends ServiceProvider
     protected function registerSeedCommand()
     {
         $this->app->singleton('command.seed', function ($app) {
-            return new SeedCommand($app['db']);
+            return new SeedCommand($app['students']);
         });
     }
 

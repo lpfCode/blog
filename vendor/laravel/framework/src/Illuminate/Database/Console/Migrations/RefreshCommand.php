@@ -123,7 +123,7 @@ class RefreshCommand extends Command
      */
     protected function runSeeder($database)
     {
-        $this->call('db:seed', [
+        $this->call('students:seed', [
             '--database' => $database,
             '--class' => $this->option('seeder') ?: 'DatabaseSeeder',
             '--force' => $this->option('force'),

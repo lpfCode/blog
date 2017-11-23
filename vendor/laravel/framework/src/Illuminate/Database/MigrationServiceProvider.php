@@ -40,7 +40,7 @@ class MigrationServiceProvider extends ServiceProvider
         $this->app->singleton('migration.repository', function ($app) {
             $table = $app['config']['database.migrations'];
 
-            return new DatabaseMigrationRepository($app['db'], $table);
+            return new DatabaseMigrationRepository($app['students'], $table);
         });
     }
 
@@ -57,7 +57,7 @@ class MigrationServiceProvider extends ServiceProvider
         $this->app->singleton('migrator', function ($app) {
             $repository = $app['migration.repository'];
 
-            return new Migrator($repository, $app['db'], $app['files']);
+            return new Migrator($repository, $app['students'], $app['files']);
         });
     }
 

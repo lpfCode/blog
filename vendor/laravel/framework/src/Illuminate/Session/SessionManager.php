@@ -89,7 +89,7 @@ class SessionManager extends Manager
     {
         $connection = $this->app['config']['session.connection'];
 
-        return $this->app['db']->connection($connection);
+        return $this->app['students']->connection($connection);
     }
 
     /**

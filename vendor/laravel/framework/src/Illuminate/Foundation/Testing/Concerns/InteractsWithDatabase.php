@@ -69,7 +69,7 @@ trait InteractsWithDatabase
      */
     protected function getConnection($connection = null)
     {
-        $database = $this->app->make('db');
+        $database = $this->app->make('students');
 
         $connection = $connection ?: $database->getDefaultConnection();
 
@@ -84,7 +84,7 @@ trait InteractsWithDatabase
      */
     public function seed($class = 'DatabaseSeeder')
     {
-        $this->artisan('db:seed', ['--class' => $class]);
+        $this->artisan('students:seed', ['--class' => $class]);
 
         return $this;
     }

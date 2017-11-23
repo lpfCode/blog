@@ -11,7 +11,7 @@ trait DatabaseTransactions
      */
     public function beginDatabaseTransaction()
     {
-        $database = $this->app->make('db');
+        $database = $this->app->make('students');
 
         foreach ($this->connectionsToTransact() as $name) {
             $database->connection($name)->beginTransaction();

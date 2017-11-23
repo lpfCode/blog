@@ -117,7 +117,7 @@ class QueueServiceProvider extends ServiceProvider
     protected function registerDatabaseConnector($manager)
     {
         $manager->addConnector('database', function () {
-            return new DatabaseConnector($this->app['db']);
+            return new DatabaseConnector($this->app['students']);
         });
     }
 
@@ -211,7 +211,7 @@ class QueueServiceProvider extends ServiceProvider
     protected function databaseFailedJobProvider($config)
     {
         return new DatabaseFailedJobProvider(
-            $this->app['db'], $config['database'], $config['table']
+            $this->app['students'], $config['database'], $config['table']
         );
     }
 

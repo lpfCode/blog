@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>数据库的基本操作</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
@@ -12,8 +11,8 @@
                 <a class="navbar-brand" href="{{ URL::to('/') }}">首页</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="{{ URL::to('db') }}">更多</a></li>
-                <li><a href="{{ URL::to('db/create') }}">添加</a>
+                <li><a href="{{ URL::to('st') }}">更多</a></li>
+                <li><a href="{{ URL::to('st/create') }}">添加</a>
             </ul>
         </nav>
         <h1>所有数据</h1>
@@ -40,8 +39,8 @@
                         <td>{{ $value->obj}}</td>
                         <td>{{ $value->score }}</td>
                         <td>
-                            <a class="btn btn-small btn-success" href="/blog/destroy?id={{ $value->id }}">删除</a>
-                            <a class="btn btn-small btn-info" href="/blog/edit?id={{ $value->id }}">编辑</a>
+                            <a class="btn btn-small btn-success" href="/st/destroy?id={{ $value->id }}">删除</a>
+                            <a class="btn btn-small btn-info" href="/st/edit?id={{ $value->id }}">编辑</a>
                         </td>
                     </tr>
                 @endforeach

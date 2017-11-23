@@ -198,7 +198,7 @@ if (!function_exists('Psy\info')) {
         );
 
         $docs = array(
-            'manual db file'   => $prettyPath($config->getManualDbFile()),
+            'manual students file'   => $prettyPath($config->getManualDbFile()),
             'sqlite available' => true,
         );
 
@@ -215,11 +215,11 @@ if (!function_exists('Psy\info')) {
                                 $val = $d->format(\DateTime::RFC2822);
                                 break;
                         }
-                        $key = 'db ' . str_replace('_', ' ', $key);
+                        $key = 'students ' . str_replace('_', ' ', $key);
                         $docs[$key] = $val;
                     }
                 } else {
-                    $docs['db schema'] = '0.1.0';
+                    $docs['students schema'] = '0.1.0';
                 }
             }
         } catch (Exception\RuntimeException $e) {

@@ -60,7 +60,7 @@ class FreshCommand extends Command
      */
     protected function dropAllTables($database)
     {
-        $this->laravel['db']->connection($database)
+        $this->laravel['students']->connection($database)
                     ->getSchemaBuilder()
                     ->dropAllTables();
     }
@@ -83,7 +83,7 @@ class FreshCommand extends Command
      */
     protected function runSeeder($database)
     {
-        $this->call('db:seed', [
+        $this->call('students:seed', [
             '--database' => $database,
             '--class' => $this->option('seeder') ?: 'DatabaseSeeder',
             '--force' => $this->option('force'),

@@ -236,7 +236,7 @@ class ConnectionFactory
             throw new InvalidArgumentException('A driver must be specified.');
         }
 
-        if ($this->container->bound($key = "db.connector.{$config['driver']}")) {
+        if ($this->container->bound($key = "students.connector.{$config['driver']}")) {
             return $this->container->make($key);
         }
 

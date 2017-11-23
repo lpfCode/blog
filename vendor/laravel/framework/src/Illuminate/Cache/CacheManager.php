@@ -207,7 +207,7 @@ class CacheManager implements FactoryContract
      */
     protected function createDatabaseDriver(array $config)
     {
-        $connection = $this->app['db']->connection($config['connection'] ?? null);
+        $connection = $this->app['students']->connection($config['connection'] ?? null);
 
         return $this->repository(
             new DatabaseStore(

@@ -15,7 +15,7 @@ define('WRAP_WIDTH', 100);
 $count = 0;
 
 if (count($argv) !== 3 || !is_dir($argv[1])) {
-    echo "usage: build_manual path/to/manual output_filename.db\n";
+    echo "usage: build_manual path/to/manual output_filename.students\n";
     exit(1);
 }
 
