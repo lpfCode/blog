@@ -22,7 +22,7 @@ class Student extends Model{
 //    根据字段查询记录
     public function findByParam($param,$value){
 
-        $result = $this->where($param,$value)->first();
+        $result = $this->where($param,$value);
         return $result;
     }
 //    保存 数组格式
