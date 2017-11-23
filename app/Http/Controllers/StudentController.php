@@ -63,6 +63,7 @@ class StudentController extends Controller
         $param = $request->input('key');
         $value = $request->input('value');
         $result = StudentService::getInstance()->selectByParam($param,$value);
+        dd($result);
         return View::make('students.show')->with('studentInfo',$result);
 //        return View::make(students.show)->with('studentInfo',$result)->with('key',$param)->with('value',$value);
     }
