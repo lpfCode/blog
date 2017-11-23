@@ -62,7 +62,7 @@ class StudentController extends Controller
     public function tjcx(Request $request){
         $param = $request->input('key');
         $value = $request->input('value');
-        $result = StudentService::getInstance()->selectByParam($param,$value);
+        $result = StudentService::getInstance()->selectByParam('$param',$value);
         return View::make('students.show')->with('studentInfo',$result);
 //        return View::make(students.show)->with('studentInfo',$result)->with('key',$param)->with('value',$value);
     }
