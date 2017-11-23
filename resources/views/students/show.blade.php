@@ -57,7 +57,7 @@
                 </tr>
             </thead>
             <tbody>
-                var_dump({{$stuentInfo}});
+                dd({{$stuentInfo}});
                 @foreach($studentInfo as $key => $value)
                     <tr>
                         <td>{{ $value->id }}</td>
