@@ -56,7 +56,7 @@
                     <td>操作</td>
                 </tr>
             </thead>
-            {{--{{$studentInfo}}--}}
+            {{$studentInfo}}
             <tbody>
                 @foreach($studentInfo as $key => $value)
                     <tr>
