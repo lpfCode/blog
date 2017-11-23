@@ -36,7 +36,7 @@ class StudentController extends Controller
     //编辑跳转回显
     public function edit(Request $request){
         $id = $request->input('id');
-        $st = StudentService::getInstance()->selectByParam('id',$id);
+        $st = StudentService::getInstance()->selectOneByParam('id',$id);
         return View::make('students.edit')->with('studentInfo',$st);
     }
     //更新表单提交

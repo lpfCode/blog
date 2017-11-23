@@ -27,6 +27,13 @@ class StudentService{
 //         return $this->_stuModel->findByParam($param,$value);
          return Student::getInstance()->findByParam($param,$value);
      }
+//     单例模式定义结束
+//     根据字段查询记录
+     public function selectOneByParam($param,$value){
+
+//         return $this->_stuModel->findByParam($param,$value);
+         return Student::getInstance()->findOneByParam($param,$value);
+     }
 //     存储 数组格式
      public function addByArray($array){
 

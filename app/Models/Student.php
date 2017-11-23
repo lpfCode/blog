@@ -25,6 +25,13 @@ class Student extends Model{
         $result = $this->where($param,$value)->get(['*']);
         return $result;
     }
+//    定义单例模式结束
+//    根据字段查询记录
+    public function findOneByParam($param,$value){
+
+        $result = $this->where($param,$value)->first();
+        return $result;
+    }
 //    保存 数组格式
     public function saveByArray($array){
 
