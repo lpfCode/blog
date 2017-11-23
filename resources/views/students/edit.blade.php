@@ -17,7 +17,7 @@
     </nav>
     <h1>编辑: {{ $studentInfo->name }}</h1>
     <table class="table table-striped table-bordered">
-        <form method="post" action="/blog/update">
+        <form method="post" action="/st/update">
             {{csrf_field()}}
             <tr>
                 <td>姓名：</td>

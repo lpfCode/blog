@@ -39,6 +39,9 @@ class StudentService{
      public function modifyByParam($param,$value){
 
 //         $this->_stuModel->removeByParam($param,$value);
+         return Student::getInstance()->updateByParam($param,$value);
+     }
+     public function deleteByParam($param,$value){
          return Student::getInstance()->removeByParam($param,$value);
      }
 }

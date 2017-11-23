@@ -36,4 +36,7 @@ class Student extends Model{
 
         $this->where($param,$value)->delete();
     }
+    public function  updateByParam($param,$value){
+        $this->where($param,$value)->update();
+    }
 }

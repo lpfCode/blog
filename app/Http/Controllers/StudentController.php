@@ -46,7 +46,7 @@ class StudentController extends Controller
         $st->obj = $request->input('obj');
         $st->score = $request->input('score');
 //        $st->save();
-        StudentService::getInstance()->addByModel($st);
+        StudentService::getInstance()->modifyByParam('id',$st);
         Session::flash('message','update successful');
         return Redirect::to('st');
     }
@@ -54,7 +54,7 @@ class StudentController extends Controller
         $id = $request->input('id');
 //        $st = Student::find($id);
 //        $st->delete();
-        StudentService::getInstance()->modifyByParam('id',$id);
+        StudentService::getInstance()->deleteByParam('id',$id);
         Session::flash('message','delete successsful');
         return Redirect::to('st');
     }
