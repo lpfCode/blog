@@ -21,14 +21,13 @@ class StudentService{
          return self::$_instance;
      }
 //     单例模式定义结束
-//     根据字段查询记录
+//     根据字段查询多条记录
      public function selectByParam($param,$value){
 
 //         return $this->_stuModel->findByParam($param,$value);
          return Student::getInstance()->findByParam($param,$value);
      }
-//     单例模式定义结束
-//     根据字段查询记录
+//     根据字段查询一条记录
      public function selectOneByParam($param,$value){
 
 //         return $this->_stuModel->findByParam($param,$value);

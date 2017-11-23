@@ -19,10 +19,10 @@ class Student extends Model{
         return self::$_instance;
     }
 //    定义单例模式结束
-//    根据字段查询记录
+//    根据字段查询多条记录
     public function findByParam($param,$value){
 
-        $result = $this->where($param,$value)->get(['*']);
+        $result = $this->where($param,$value)->get();
         return $result;
     }
 //    定义单例模式结束

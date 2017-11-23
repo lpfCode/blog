@@ -15,7 +15,7 @@ class StudentController extends Controller
     //查寻全部
     public function index(){
         $st = Student::all();
-        return View::make('students.show')->with('studentInfo',$st);
+        return View::make('students.show')->with('date',['info'=>$st]);
     }
     //新增跳转
     public function create(){
@@ -81,7 +81,7 @@ class StudentController extends Controller
             Session::flash('message','查询的内容为空');
             return Redirect::to('st');
         }else{
-            return View::make('students.show')->with('studentInfo', $result)->with('key',$param)->with('value',$value);
+            return View::make('students.show')->with('data', ['info'=>$result, 'key'=>$param, 'value'=>$value]);
         }
 //        return View::make(students.show)->with('studentInfo',$result);
     }
