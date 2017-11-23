@@ -46,11 +46,11 @@ class StudentController extends Controller
         $st->obj = $request->input('obj');
         $st->score = $request->input('score');
 //        $st->save();
-        StudentService::getInstance()->modifyByParam('id',$st);
+        StudentService::getInstance()->modifyByModel($st);
         Session::flash('message','update successful');
         return Redirect::to('st');
     }
-    public function detroy(Request $request){
+    public function destroy(Request $request){
         $id = $request->input('id');
 //        $st = Student::find($id);
 //        $st->delete();

@@ -28,15 +28,12 @@ class Student extends Model{
 
         $this->insert($array);
     }
-    public function saveByModel(Student $model){
+    public function updateByModel(Student $model){
 
         $model->save();
     }
     public function removeByParam($param,$value){
 
         $this->where($param,$value)->delete();
-    }
-    public function  updateByParam($param,$value){
-        $this->where($param,$value)->update();
     }
 }

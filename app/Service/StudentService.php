@@ -31,17 +31,13 @@ class StudentService{
 //         $this->_stuModel->saveByArray($array);
          return Student::getInstance()->saveByArray($array);
      }
-     public function addByModel(Student $student){
+     public function modifyByModel(Student $student){
 
 //         $this->_stuModel->saveByModel($student);
-         return Student::getInstance()->saveByModel();
-     }
-     public function modifyByParam($param,$value){
-
-//         $this->_stuModel->removeByParam($param,$value);
-         return Student::getInstance()->updateByParam($param,$value);
+         return Student::getInstance()->updateByModel();
      }
      public function deleteByParam($param,$value){
+
          return Student::getInstance()->removeByParam($param,$value);
      }
 }
