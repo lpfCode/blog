@@ -34,7 +34,7 @@ class StudentController extends Controller
     }
     public function edit(Request $request){
         $id = $request->input('id');
-        $st = StudentService::getInstance()->selectByParam(id,$id);
+        $st = StudentService::getInstance()->selectByParam('id',$id);
 //        $st = Student::find($id);
         return View::make('students.edit')->with('studentInfo',$st);
     }
@@ -54,7 +54,7 @@ class StudentController extends Controller
         $id = $request->input('id');
 //        $st = Student::find($id);
 //        $st->delete();
-        StudentService::getInstance()->modifyByParam(id,$id);
+        StudentService::getInstance()->modifyByParam('id',$id);
         Session::flash('message','delete successsful');
         return Redirect::to('st');
     }

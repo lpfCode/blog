@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>数据库基本操作</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container">
@@ -16,7 +17,7 @@
         </nav>
         <h1>添加学生信息</h1>
         <table class="table table-striped table-bordered">
-            <form method="post" action="/blog/store">
+            <form method="post" action="/st/store">
                 {{ csrf_field() }}
                 <tr>
                     <td>姓名：</td>
