@@ -82,7 +82,7 @@ class StudentController extends Controller
             return Redirect::to('st');
         }else{
             echo "$result";
-//            return View::make('students.show')->with('studentInfo',$result);
+            return View::make('students.show')->with('studentInfo',$result);
         }
 //        return View::make(students.show)->with('studentInfo',$result)->with('key',$param)->with('value',$value);
     }
