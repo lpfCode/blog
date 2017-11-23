@@ -78,10 +78,11 @@ class StudentController extends Controller
         }
 //        var_dump($result);
         if($result==null){
-            Session::flash('message','查询的内容不存在');
+            Session::flash('message','查询的内容为空');
             return Redirect::to('st');
         }else{
-            return View::make('students.show')->with('studentInfo',$result);
+            echo "$result";
+//            return View::make('students.show')->with('studentInfo',$result);
         }
 //        return View::make(students.show)->with('studentInfo',$result)->with('key',$param)->with('value',$value);
     }
