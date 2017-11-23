@@ -51,7 +51,7 @@
                     <td>ID</td>
                     <td>姓名</td>
                     <td>年龄</td>
-                    {{--<td>科目</td>--}}
+                    <td>科目</td>
                     <td>成绩</td>
                     <td>操作</td>
                 </tr>
@@ -63,7 +63,7 @@
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->age }}</td>
-                        {{--<td>{{ $value->obj}}</td>--}}
+                        <td>{{ $value->obj}}</td>
                         <td>{{ $value->score }}</td>
                         <td>
                             <a class="btn btn-small btn-success" href="/st/destroy?id={{ $value->id }}">删除</a>
