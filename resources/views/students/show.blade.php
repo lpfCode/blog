@@ -62,6 +62,7 @@
                     </tr>
                 @endforeach
             </tbody>
+            <tr>{{$data['info']->links()}}}</tr>
         </table>
     </div>
 </body>
