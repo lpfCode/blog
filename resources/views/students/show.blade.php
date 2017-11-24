@@ -62,8 +62,8 @@
                     </tr>
                 @endforeach
             </tbody>
-            <tr>{{$data['info']->links()}}}</tr>
         </table>
+        <div><tr>{{$data['info']->links()}}</tr></div>>
     </div>
 </body>
 </html>
