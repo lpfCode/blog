@@ -17,7 +17,7 @@ class StudentController extends Controller
     public function index(){
 //        $st = Student::all();
         $st = new Student();
-        $st->orderBy('id','desc')->paginate(3);
+        $st->orderBy('id','desc')->get()->paginate(3);
 //        $st = Student::paginate(3);
         return View::make('students.show')->with('data',['info'=>$st,'key'=>null,'value'=>null]);
     }
