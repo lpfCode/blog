@@ -63,7 +63,7 @@
                 @endforeach
             </tbody>
         </table>
-        <div><tr>{{$data['info']->links()}}</tr></div>>
+        <div align="right" style="padding-top: 5px"><tr>{{$data['info']->links()}}</tr></div>
     </div>
 </body>
 </html>
