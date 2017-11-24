@@ -16,9 +16,9 @@ class StudentController extends Controller
     //查寻全部
     public function index(){
 //        $st = Student::all();
-        $st = new Student();
-        $st->orderBy('id','desc')->get()->paginate(3);
-//        $st = Student::paginate(3);
+//        $st = new Student();
+//        $st->orderBy('id','desc')->get();
+        $st = Student::paginate(3);
         return View::make('students.show')->with('data',['info'=>$st,'key'=>null,'value'=>null]);
     }
     //新增跳转
