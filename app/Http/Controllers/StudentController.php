@@ -28,28 +28,21 @@ class StudentController extends Controller
     //添加表单提交
     public function store(Request $request){
 
-        $rules = array(
+        $this->validate($request,[
             'name'       => 'required',
-            'obj'      => 'required|email',
-            'age' => 'required|numeric',
+            'obj'      => 'required',
+            'age' => 'required',
             'score' => 'required'
-        );
-        $validator = Validator::make(Input::all(), $rules);
-        if($validator->fails()){
-
-            return Redirect::to('st/create')
-                ->withErrors($validator);
-        }else{
-            $student =[
-                'name'=>$request->input('name'),
-                'age' =>$request->input('age'),
-                'obj' =>$request->input('obj'),
-                'score'=>$request->input('score')
-            ];
-            StudentService::getInstance()->addByArray($student);
-            Session::flash('message','添加成功');
-            return Redirect::to('st');
-        }
+            ]);
+        $student =[
+            'name'=>$request->input('name'),
+            'age' =>$request->input('age'),
+            'obj' =>$request->input('obj'),
+            'score'=>$request->input('score')
+        ];
+        StudentService::getInstance()->addByArray($student);
+        Session::flash('message','添加成功');
+        return Redirect::to('st');
     }
     //编辑跳转回显
     public function edit(Request $request){
