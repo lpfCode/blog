@@ -16,15 +16,6 @@
         </ul>
     </nav>
     <h1>编辑: {{ $studentInfo->name }}</h1>
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
     <table class="table table-striped table-bordered">
         <form method="post" action="/st/update">
             {{csrf_field()}}

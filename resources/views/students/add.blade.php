@@ -16,6 +16,15 @@
             </ul>
         </nav>
         <h1>添加学生信息</h1>
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         <table class="table table-striped table-bordered">
             <form method="post" action="/st/store">
                 {{ csrf_field() }}
