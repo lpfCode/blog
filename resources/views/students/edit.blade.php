@@ -50,7 +50,7 @@
                 <td>成绩：</td>
                 <td><input type="text" name="score" value="{{$studentInfo->score}}"></td>
                 <td>成绩单：</td>
-                <td style="height: 80px;width: 80px"><img src="./img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
+                <td style="height: 80px;width: 80px"><img src="../img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
             </tr>
             <tr>
                 <td colspan="2">
