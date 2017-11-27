@@ -27,7 +27,7 @@
                 <input style="display: none" type="text" name="id" value="{{ $studentInfo->id }}">
                 <td><input type="text" name="name" value="{{ $studentInfo->name }}"></td>
                 <td>头像：</td>
-                <td style="width: 80px;height: 80px"><img src="./img/img.jpg" onclick="imgAdd({{$studentInfo->id}})"></td>
+                <td><img style="height: 80px;width: 80px" src="../img/img.jpg" onclick="imgAdd({{$studentInfo->id}})"></td>
             </tr>
             <tr>
                 <td>年龄：</td>
@@ -50,7 +50,7 @@
                 <td>成绩：</td>
                 <td><input type="text" name="score" value="{{$studentInfo->score}}"></td>
                 <td>成绩单：</td>
-                <td style="height: 80px;width: 80px"><img src="./img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
+                <td><img style="height: 80px;width: 80px" src="../img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
             </tr>
             <tr>
                 <td colspan="2">
