@@ -31,11 +31,11 @@
             </tr>
             <tr>
                 <td>年龄：</td>
-                <td><input type="text" name="age" value="{{ $studentInfo->age }}"></td>
+                <td colspan="3"><input type="text" name="age" value="{{ $studentInfo->age }}"></td>
             </tr>
             <tr>
                 <td>科目：</td>
-                <td>
+                <td colspan="3">
                     <select name="obj">
                         {{--  有@标识符之后，就会用PHP解释器解析@if和@endif之间的代码就不用加{{}}  --}}
                         <option value="语文" @if($studentInfo->obj =='语文') selected @endif>语文</option>
@@ -53,7 +53,7 @@
                 <td><img style="height: 80px;width: 80px" src="../img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="4">
                     <input type="submit" value="提交">
                 </td>
             </tr>
