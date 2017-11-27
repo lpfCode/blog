@@ -3,6 +3,9 @@
 <head>
     <title>看这里:编辑</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
+    {{--<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">--}}
+    {{--<script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>--}}
 </head>
 <body>
 <div class="container">
@@ -23,6 +26,8 @@
                 <td>姓名：</td>
                 <input style="display: none" type="text" name="id" value="{{ $studentInfo->id }}">
                 <td><input type="text" name="name" value="{{ $studentInfo->name }}"></td>
+                <td>头像：</td>
+                <td style="width: 80px;height: 80px"><img src="./img/img.jpg" onclick="imgAdd({{$studentInfo->id}})"></td>
             </tr>
             <tr>
                 <td>年龄：</td>
@@ -44,6 +49,8 @@
             <tr>
                 <td>成绩：</td>
                 <td><input type="text" name="score" value="{{$studentInfo->score}}"></td>
+                <td>成绩单：</td>
+                <td style="height: 80px;width: 80px"><img src="./img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
             </tr>
             <tr>
                 <td colspan="2">
