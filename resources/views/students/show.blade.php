@@ -63,7 +63,7 @@
                 @endforeach
             </tbody>
         </table>
-        <div align="right"><tr>{{$data['info']->appends(['sort' => 'votes'])->links()}}</tr></div>
+        <div align="right"><tr>{{$data['info']->links()}}</tr></div>
     </div>
 </body>
 </html>

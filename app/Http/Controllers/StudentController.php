@@ -18,7 +18,7 @@ class StudentController extends Controller
 //        $st = Student::all();
 //        $st = new Student();
 //        $st->orderBy('id','desc')->get();
-        $st = Student::paginate(3);
+        $st = Student::paginate(6);
         return View::make('students.show')->with('data',['info'=>$st,'key'=>null,'value'=>null]);
     }
     //新增跳转
@@ -33,6 +33,12 @@ class StudentController extends Controller
             'obj' =>$request->input('obj'),
             'score'=>$request->input('score')
         ];
+        $this->validate($request,[
+            'name' => required,
+            'age'=>required,
+            'obj'=>required,
+            'score'=>required,
+        ]);
         StudentService::getInstance()->addByArray($student);
         Session::flash('message','添加成功');
         return Redirect::to('st');
