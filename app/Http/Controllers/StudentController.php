@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\myValidator;
 use App\Models\Student;
 use App\Service\StudentService;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class StudentController extends Controller
         return view('students.add');
     }
     //添加表单提交
-    public function store(Request $request){
+    public function store(myValidator $request){
 
         $this->validate($request,[
             'name'       => 'required',
