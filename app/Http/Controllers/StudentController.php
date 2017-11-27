@@ -27,7 +27,7 @@ class StudentController extends Controller
         return view('students.add');
     }
     //添加表单提交
-    public function store(myValidator $request){
+    public function store(Request $request){
 
         $this->validate($request,[
             'name'       => 'required',
