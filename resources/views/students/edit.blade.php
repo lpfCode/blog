@@ -3,15 +3,11 @@
 <head>
     <title>看这里:编辑</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    {{--<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>--}}
-    {{--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>--}}
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
-        function imgAdd() {
-//            var data = document.getElementsByTagName("form");
-//            var data = document.getElementById("img");
-//            alert(data);
-            alert(1);
+        function imgAdd(id) {
+            document.getElementById("img").click();
+            alert(id);
             $.ajax({
                 type:"post",
                 url:"/file/imgadd",
@@ -41,14 +37,14 @@
     </nav>
     <h1>编辑: {{ $studentInfo->name }}</h1>
     <table class="table table-striped table-bordered">
-        <form name ="form" method="post" action="/st/update" enctype="multipart/form-data">
+        <form name ="form" method="post" action="/st/update">
             {{csrf_field()}}
             <tr>
                 <td>姓名：</td>
                 <input style="display: none" type="text" name="id" value="{{ $studentInfo->id }}">
                 <td><input type="text" name="name" value="{{ $studentInfo->name }}"></td>
                 <input style="display: none" id="img" name="img" type="file" class="inputFile" />
-                <td><img style="height: 25px;width: 25px" src="../img/img.jpg" title="点击添加图片" onclick="imgAdd('img')"></td>
+                <td>头像上传：<img style="height: 25px;width: 25px" src="../img/img.jpg" alt="点击添加头像" onclick="imgAdd({{$studentInfo->id}})"></td>
                 <td><img style="height: 80px;width: 80px" src=""></td>
             </tr>
             <tr>
