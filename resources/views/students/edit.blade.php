@@ -43,7 +43,7 @@
                 <td>姓名：</td>
                 <input style="display: none" type="text" name="id" value="{{ $studentInfo->id }}">
                 <td><input type="text" name="name" value="{{ $studentInfo->name }}"></td>
-                <td>头像上传：<img style="height: 10px;width: 10px" src="../img/img.jpg" onclick="imgAdd({{$studentInfo->id}})"></td>
+                <td>头像上传：<img style="height: 25px;width: 25px" src="../img/img.jpg" onclick="imgAdd({{$studentInfo->id}})"></td>
                 <input style="display: none" name="img" type="file" class="inputFile" />
                 <td><img style="height: 80px;width: 80px" src=""></td>
             </tr>
@@ -67,7 +67,7 @@
             <tr>
                 <td>成绩：</td>
                 <td><input type="text" name="score" value="{{$studentInfo->score}}"></td>
-                <td>成绩单上传：<img style="height: 10px;width: 10px" src="../img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
+                <td>成绩单上传：<img style="height: 25px;width: 25px" src="../img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
                 <input style="display: none" name="file" type="file" class="inputFile">
                 <td><img style="height: 80px;width: 80px" src=""></td>
             </tr>
