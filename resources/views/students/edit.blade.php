@@ -4,7 +4,7 @@
     <title>看这里:编辑</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     {{--<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>--}}
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    {{--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>--}}
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         function imgAdd(id) {
