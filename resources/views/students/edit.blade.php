@@ -8,13 +8,13 @@
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         function imgAdd(id) {
-            var data = document.getElementsByTagName("name");
+            var data = document.getElementsByTagName("form");
             alert(data);
             alert(1);
             $.ajax({
                 type:"post",
                 url:"/file/imgadd",
-//                data:"data",
+                data:"data",
                 async:"true",
                 cache:"false",
                 success: function ($returndata) {
