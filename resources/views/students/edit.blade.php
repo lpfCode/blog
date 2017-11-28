@@ -8,12 +8,10 @@
         function imgAdd(id) {
             document.getElementById("img").click();
             var data = new FormData();
-            $.each($('#img')[0].files, function(i, file) {
-                 data.append('upload_file', file);
-            });
+            data.append($('#img')[0].files[0]);
             alert(data);
             $.ajax({
-                type:"post",
+                type:"POST",
                 url:"/file/imgadd",
                 data:"data",
                 async:"true",
