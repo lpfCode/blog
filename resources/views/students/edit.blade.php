@@ -3,9 +3,26 @@
 <head>
     <title>看这里:编辑</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
-    {{--<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">--}}
-    {{--<script type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>--}}
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        function imgAdd(id) {
+            var data = document.getElementsByTagName("name");
+            $.ajax({
+                type:"post",
+                url:"/file/imgadd/",
+                data:"data",
+                async:"true",
+                success: function ($returndata) {
+//                    console.log(returndata);
+                },
+                error: function ($returndata) {
+//                    console.log(returndata);
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -20,13 +37,14 @@
     </nav>
     <h1>编辑: {{ $studentInfo->name }}</h1>
     <table class="table table-striped table-bordered">
-        <form method="post" action="/st/update">
+        <form name ="form" method="post" action="/st/update">
             {{csrf_field()}}
             <tr>
                 <td>姓名：</td>
                 <input style="display: none" type="text" name="id" value="{{ $studentInfo->id }}">
                 <td><input type="text" name="name" value="{{ $studentInfo->name }}"></td>
-                <td>头像上传：<img style="height: 80px;width: 80px" src="../img/img.jpg" onclick="imgAdd({{$studentInfo->id}})"></td>
+                <td>头像上传：<img style="height: 10px;width: 10px" src="../img/img.jpg" onclick="imgAdd({{$studentInfo->id}})"></td>
+                <input style="display: none" name="img" type="file" class="inputFile" />
                 <td><img style="height: 80px;width: 80px" src=""></td>
             </tr>
             <tr>
@@ -49,7 +67,8 @@
             <tr>
                 <td>成绩：</td>
                 <td><input type="text" name="score" value="{{$studentInfo->score}}"></td>
-                <td>成绩单：<img style="height: 80px;width: 80px" src="../img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
+                <td>成绩单上传：<img style="height: 10px;width: 10px" src="../img/file.jpg" onclick="fileup({{$studentInfo->id}})"></td>
+                <input style="display: none" name="file" type="file" class="inputFile">
                 <td><img style="height: 80px;width: 80px" src=""></td>
             </tr>
             <tr>

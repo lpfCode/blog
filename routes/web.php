@@ -31,3 +31,5 @@ Route::get('/st/create', 'StudentController@create');
 Route::post('/st/store', 'StudentController@store');
 Route::post('/st/update', 'StudentController@update');
 Route::get('/st/tjcx', 'StudentController@tjcx');
+Route::post('/file/imgadd', 'FileController@imgAdd');
+Route::post('/file/fileup', 'FileController@fileUp');
