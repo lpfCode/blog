@@ -45,9 +45,9 @@
                     cache: false,
                     contentType: false,        /*不可缺*/
                     processData: false,         /*不可缺*/
-                    success:function(data){
-                        data = $(data).html();/*转格式*/
-                        alert(1);
+                    success:function(){
+//                        data = $(data).html();/*转格式*/
+                        alert(' 上传成功');
                     },
                     error:function(){
                         alert('上传出错');
