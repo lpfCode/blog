@@ -7,11 +7,15 @@
     <script type="text/javascript">
         function imgAdd(id) {
             document.getElementById("img").click();
-            alert(id);
+            var data = new FormData();
+            $.each($('#img')[0].files, function(i, file) {
+                 data.append('upload_file', file);
+            });
+            alert(data);
             $.ajax({
                 type:"post",
                 url:"/file/imgadd",
-//                data:"data",
+                data:"data",
                 async:"true",
                 cache:"false",
                 success: function () {
