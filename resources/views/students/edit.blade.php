@@ -32,7 +32,6 @@
     <script type="text/javascript">
         $(document).ready(function(){
             //响应文件添加成功事件
-            var feedback = $("#feedback");
             $("#img").change(function(){
                 var data = new FormData();
                 $.each($('#img')[0].files, function(i, file) {
@@ -48,11 +47,6 @@
                     processData: false,         /*不可缺*/
                     success:function(data){
                         data = $(data).html();        /*转格式*/
-                        if($("#feedback").children('img').length == 0) {
-                            $("#feedback").append(data.replace(/&lt;/g,'<').replace(/&gt;/g,'>'));
-                        }else{
-                            $("#feedback").children('img').eq(0).before(data.replace(/&lt;/g,'<').replace(/&gt;/g,'>'));
-                        }
                     },
                     error:function(){
                         alert('上传出错');
@@ -86,11 +80,9 @@
                 <td><input type="text" name="name" value="{{ $studentInfo->name }}"></td>
                 <input style="display: none" id="img" name="img" type="file" class="inputFile" />
                 {{--<td>头像上传：<img style="height: 25px;width: 25px" src="../img/img.jpg" alt="点击添加头像" onclick="imgAdd({{$studentInfo->id}})"></td>--}}
-                <div id="feedback">
                 <td><a href="javascript:;" class="file">选择图片
                         <input type="file" multiple="multiple" id="img" name="" class="photo"></a></td>
                 <td><img style="height: 80px;width: 80px" src=""></td>
-                </div>
             </tr>
             <tr>
                 <td>年龄：</td>
