@@ -11,7 +11,7 @@
             data.append("file",$('#img')[0].files[0]);
             alert(data);
             $.ajax({
-                type:"POST",
+                type:"GET",
                 url:"/file/imgadd",
                 data:"data",
                 async:"true",
