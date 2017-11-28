@@ -9,19 +9,20 @@
     <script type="text/javascript">
         function imgAdd(id) {
 //            var data = document.getElementsByTagName("form");
-//            alert(data);
+            var data = document.getElementById("img");
+            alert(data);
             alert(id);
             $.ajax({
                 type:"post",
                 url:"/file/imgadd",
-//                data:"data",
+                data:"data",
                 async:"true",
                 cache:"false",
                 success: function ($returndata) {
-                    console.log(returndata);
+                    console.log(1);
                 },
                 error: function ($returndata) {
-                    console.log(returndata);
+                    console.log(2);
                 }
             });
         }
@@ -46,7 +47,7 @@
                 <td>姓名：</td>
                 <input style="display: none" type="text" name="id" value="{{ $studentInfo->id }}">
                 <td><input type="text" name="name" value="{{ $studentInfo->name }}"></td>
-                <input style="display: none" name="img" type="file" class="inputFile" />
+                <input style="display: none" id="img" name="img" type="file" class="inputFile" />
                 <td>头像上传：<img style="height: 25px;width: 25px" src="../img/img.jpg" onclick="imgAdd({{$studentInfo->id}})"></td>
                 <td><img style="height: 80px;width: 80px" src=""></td>
             </tr>
