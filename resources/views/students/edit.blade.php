@@ -7,8 +7,13 @@
     <script type="text/javascript">
         function imgAdd(id) {
             document.getElementById("img").click();
+            //创建FormData对象
             var data = new FormData();
-            data.append("file",$('#img')[0].files[0]);
+            //为FormData对象添加数据
+            $.each($('#img')[0].files, function(i, file) {
+                data.append('upload_file'+i, file);
+            });
+            $(".loading").show();    //显示加载图片
             alert(data);
             $.ajax({
                 type:"POST",
