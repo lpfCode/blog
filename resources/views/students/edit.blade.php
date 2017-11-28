@@ -9,19 +9,20 @@
     <script type="text/javascript">
         function imgAdd(obj) {
 //            var data = document.getElementsByTagName("form");
-            var data = document.getElementById("img");
-            alert(data);
+//            var data = document.getElementById("img");
+            document.getElementById("img").click();
+//            alert(data);
             alert(obj);
             $.ajax({
                 type:"post",
                 url:"/file/imgadd",
-                data:"data",
+//                data:"data",
                 async:"true",
                 cache:"false",
-                success: function ($returndata) {
+                success: function () {
                     console.log(1);
                 },
-                error: function ($returndata) {
+                error: function () {
                     console.log(2);
                 }
             });
