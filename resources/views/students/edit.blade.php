@@ -40,7 +40,7 @@
     </nav>
     <h1>编辑: {{ $studentInfo->name }}</h1>
     <table class="table table-striped table-bordered">
-        <form name ="form" method="post" action="/st/update">
+        <form name ="form" method="post" action="/st/update" enctype="multipart/form-data">
             {{csrf_field()}}
             <tr>
                 <td>姓名：</td>
