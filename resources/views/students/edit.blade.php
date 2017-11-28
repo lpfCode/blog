@@ -14,7 +14,7 @@
             $.ajax({
                 type:"post",
                 url:"/file/imgadd",
-                data:"data",
+//                data:"data",
                 async:"true",
                 cache:"false",
                 success: function ($returndata) {
