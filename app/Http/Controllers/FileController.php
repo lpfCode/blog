@@ -22,6 +22,8 @@ class FileController extends Controller {
             'name' => $request->file('img')->getFilename()
 //            'path' => $request->file('img')->getPath()
         ];
+        var_dump($img);
+        dd($img);
         FileService::getInstance()->saveByArr($img);
     }
     public function fileUp(Request $request){

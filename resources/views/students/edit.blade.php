@@ -11,9 +11,10 @@
             var data = document.getElementsByTagName("name");
             $.ajax({
                 type:"post",
-                url:"/file/imgadd/",
+                url:"/file/imgadd",
                 data:"data",
                 async:"true",
+                cache:"false",
                 success: function ($returndata) {
 //                    console.log(returndata);
                 },
