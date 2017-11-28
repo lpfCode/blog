@@ -7,12 +7,11 @@
     {{--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>--}}
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
-        function imgAdd(obj) {
+        function imgAdd() {
 //            var data = document.getElementsByTagName("form");
 //            var data = document.getElementById("img");
-            document.getElementById("img").click();
 //            alert(data);
-            alert(obj);
+            alert(1);
             $.ajax({
                 type:"post",
                 url:"/file/imgadd",
@@ -49,7 +48,7 @@
                 <input style="display: none" type="text" name="id" value="{{ $studentInfo->id }}">
                 <td><input type="text" name="name" value="{{ $studentInfo->name }}"></td>
                 <input style="display: none" id="img" name="img" type="file" class="inputFile" />
-                <td>头像上传：<img style="height: 25px;width: 25px" src="../img/img.jpg" onclick="imgAdd('img')"></td>
+                <td><img style="height: 25px;width: 25px" src="../img/img.jpg" title="点击添加图片" onclick="imgAdd('img')"></td>
                 <td><img style="height: 80px;width: 80px" src=""></td>
             </tr>
             <tr>
