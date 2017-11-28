@@ -9,6 +9,8 @@
     <script type="text/javascript">
         function imgAdd(id) {
             var data = document.getElementsByTagName("name");
+            alert(data);
+            alert(1);
             $.ajax({
                 type:"post",
                 url:"/file/imgadd",
