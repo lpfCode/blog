@@ -39,7 +39,7 @@
                  });
                 $.ajax({
                     type:'POST',
-                    url:'file/imgadd',
+                    url:'/file/imgadd',
                     data:data,
                     cache: false,
                     contentType: false,
