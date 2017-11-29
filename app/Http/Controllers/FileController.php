@@ -17,7 +17,7 @@ class FileController extends Controller {
     public function imgAdd(Request $request){
 
 //        $filename = $request->input('img');
-        dd($request->input('id'));
+        dd($request->input());
         $img=[
             'stId' => $request->input('id'),
             'name' => $request->file('img')->getFilename()
