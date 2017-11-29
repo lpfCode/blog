@@ -38,12 +38,12 @@
                     data.append('upload_file'+i, file);
                  });
                 $.ajax({
-                    url:'file/imgadd', /*去过那个php文件*/
-                    type:'POST',  /*提交方式*/
+                    type:'POST',
+                    url:'file/imgadd',
                     data:data,
                     cache: false,
-                    contentType: false,        /*不可缺*/
-                    processData: false,         /*不可缺*/
+                    contentType: false,
+                    processData: false,
                     success:function(){
                         alert(' 上传成功');
                     },
