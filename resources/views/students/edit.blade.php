@@ -4,23 +4,33 @@
     <title>看这里:编辑</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/ajaxfileupload.js"></script>
     <script type="text/javascript">
         function imgAdd(id) {
-            $("#img").click();
+            $("#img").click(function () {
+                imgupload();
+            });
         }
-        $(function () {
-            $("#img").fileupload({
+        var data = new FormData();
+        $.each($('#img')[0].files, function(i, file) {
+            data.append('upload_file'+i, file);
+        });
+        function imgupload() {
+            $.ajax({
+                type:"POST",
                 url:"file/imgadd",
-                autoUpload:true,
-                success:function(result){
-                    if(!result){
-                        alert("上传错误请重新上传");
-                    }else{
-                        alert("上传成功");
-                    }
+                data:"data",
+                cache: false,
+                contentType: false,
+                processData: false,
+                success:function ($result) {
+                    console.log(1);
+                },
+                error:function () {
+                    console.log(2);
                 }
             });
-        });
+        }
     </script>
     {{--<script type="text/javascript">--}}
         {{--$(document).ready(function(){--}}
