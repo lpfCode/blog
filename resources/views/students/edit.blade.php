@@ -6,14 +6,14 @@
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/ajaxfileupload.js"></script>
     <script type="text/javascript">
+        var data = new FormData();
         function imgAdd(id) {
             $("#img").click();
+            $.each($('#img')[0].files, function(i, file) {
+                data.append('upload_file'+i, file);
+            });
         }
         $(function () {
-            var data = new FormData();
-                $.each($('#img')[0].files, function(i, file) {
-                    data.append('upload_file'+i, file);
-            });
             $.ajax({
                 type:"POST",
                 url:"file/imgadd",
