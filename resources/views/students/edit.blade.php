@@ -7,12 +7,9 @@
     <script src="../js/ajaxfileupload.js"></script>
     <script type="text/javascript">
         function imgAdd(id) {
-            $("#img").click(function () {
-                alert(2);
-                imgupload();
-            });
+            $("#img").click();
         }
-        function imgupload() {
+        $(function () {
             var data = new FormData();
                 $.each($('#img')[0].files, function(i, file) {
                     data.append('upload_file'+i, file);
@@ -31,7 +28,7 @@
                     console.log(2);
                 }
             });
-        }
+        })
     </script>
     {{--<script type="text/javascript">--}}
         {{--$(document).ready(function(){--}}
