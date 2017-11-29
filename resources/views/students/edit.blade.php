@@ -7,7 +7,9 @@
     <script src="../js/ajaxfileupload.js"></script>
     <script type="text/javascript">
         function imgAdd(id) {
+            alert(1);
             $("#img").click(function () {
+                alert(2);
                 imgupload();
             });
         }
