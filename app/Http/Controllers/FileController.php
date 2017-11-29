@@ -16,10 +16,14 @@ class FileController extends Controller {
 
     public function imgAdd(Request $request){
 
+        $fileinfo = $_FILES['file'];
+        echo $fileinfo;
         return response()->json(array(
            'status' => 1,
             'msg' => 'ok'
         ));
+//        $img = [
+//        ];
     }
     public function fileUp(Request $request){
 
