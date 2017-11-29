@@ -47,8 +47,8 @@
                     cache: false,
                     contentType: false,
                     processData: false,
-                    success:function(){
-                        alert(' 上传成功');
+                    success:function(data){
+                        alert(data);
                     },
                     error:function(){
                         alert('上传出错');
