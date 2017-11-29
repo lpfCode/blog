@@ -18,11 +18,8 @@
                 $.ajax({
                     type:'POST',
                     url:'/file/imgadd',
-                    data:data,
+                    data:{ date : '2015-03-12'},
                     dataType:'json',
-//                    headers:{
-//                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-//                    },
                     cache: false,
                     contentType: false,
                     processData: false,
