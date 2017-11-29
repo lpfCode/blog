@@ -18,7 +18,7 @@
                 $.ajax({
                     type:'POST',
                     url:'/file/imgadd',
-                    data:{ date : '2015-03-12'},
+                    data:data,
                     dataType:'json',
                     cache: false,
                     contentType: false,
