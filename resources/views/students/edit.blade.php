@@ -39,11 +39,12 @@
                 $.each($('#img')[0].files, function(i, file) {
                     data.append('upload_file'+i, file);
                  });
+                alert(data);
                 $.ajax({
                     type:'POST',
                     url:'/file/imgadd',
                     data:data,
-//                    dataType:'json',
+                    dataType:'json',
                     cache: false,
                     contentType: false,
                     processData: false,
