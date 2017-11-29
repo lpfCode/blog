@@ -48,8 +48,8 @@
                     contentType: false,
                     processData: false,
                     success:function(data){
-                        alert(data);
-                        $("#img1").attr("src", data);
+                        alert(data.html);
+                        $("#img1").attr("src", data.html);
                     },
                     error:function(){
                         alert('上传出错');
