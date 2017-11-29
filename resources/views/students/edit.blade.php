@@ -48,7 +48,7 @@
                     contentType: false,
                     processData: false,
                     success:function(data){
-                        alert(data.html);
+                        alert(data.html());
                         $("#img1").attr("src", data.html);
                     },
                     error:function(){
