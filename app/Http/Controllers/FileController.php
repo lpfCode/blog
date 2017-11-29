@@ -15,8 +15,9 @@ use Illuminate\Http\Request;
 class FileController extends Controller {
 
     public function imgAdd(Request $request){
-        
-        echo "Input::get('date')";
+
+
+        echo $request->input('date');
         return response()->json(array(
            'status' => 1,
             'msg' => 'ok'
