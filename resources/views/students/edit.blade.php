@@ -19,15 +19,18 @@
                     type:'POST',
                     url:'/file/imgadd',
                     data:data,
-//                    dataType:'json',
+                    dataType:'json',
+                    headers:{
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    },
                     cache: false,
                     contentType: false,
                     processData: false,
                     success:function(data){
-                        alert(data);
+                        alert(data.status);
                     },
-                    error:function(){
-                        alert('上传出错');
+                    error:function(xhr,type){
+                        alert('Ajax error!');
                     }
                 });
             });

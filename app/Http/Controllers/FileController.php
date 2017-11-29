@@ -15,21 +15,11 @@ use Illuminate\Http\Request;
 class FileController extends Controller {
 
     public function imgAdd(Request $request){
-
-//        $img=[
-//            'stId' => $request->input('id'),
-//            'name' => $request->file('img')->getFilename()
-////            'path' => $request->file('img')->getPath()
-//        ];
-//        $img=[
-//            'stId' => 1,
-//            'name' => 'ss',
-//            'path' => 'de'
-//        ];
-//        FileService::getInstance()->saveByArr($img);
-        dd(1);
-        var_dump("ssssssss");
-        return 1;
+        echo "$request->all()";
+        return response()->json(array(
+           'status' => 1,
+            'msg' => 'ok'
+        ));
     }
     public function fileUp(Request $request){
 
