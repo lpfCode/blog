@@ -11,11 +11,11 @@
                 imgupload();
             });
         }
-        var data = new FormData();
-        $.each($('#img')[0].files, function(i, file) {
-            data.append('upload_file'+i, file);
-        });
         function imgupload() {
+            var data = new FormData();
+                $.each($('#img')[0].files, function(i, file) {
+                    data.append('upload_file'+i, file);
+            });
             $.ajax({
                 type:"POST",
                 url:"file/imgadd",
