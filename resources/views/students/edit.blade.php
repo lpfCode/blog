@@ -7,7 +7,7 @@
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/ajaxfileupload.js"></script>
     <script type="text/javascript">
-//        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         $(document).ready(function(){
             $("#img").change(function(){
                 var data = new FormData();
@@ -20,9 +20,9 @@
                     url:'/file/imgadd',
                     data:data,
                     dataType:'json',
-                    headers:{
-                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                    },
+//                    headers:{
+//                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+//                    },
                     cache: false,
                     contentType: false,
                     processData: false,
