@@ -22,12 +22,14 @@ class FileController extends Controller {
 //            'name' => $request->file('img')->getFilename()
 ////            'path' => $request->file('img')->getPath()
 //        ];
-        $img=[
-            'stId' => 1,
-            'name' => 'ss',
-            'path' => 'de'
-        ];
-        FileService::getInstance()->saveByArr($img);
+//        $img=[
+//            'stId' => 1,
+//            'name' => 'ss',
+//            'path' => 'de'
+//        ];
+//        FileService::getInstance()->saveByArr($img);
+        dd(1);
+        var_dump("ssssssss");
     }
     public function fileUp(Request $request){
 
