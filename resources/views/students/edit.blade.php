@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>看这里:编辑</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/ajaxfileupload.js"></script>
@@ -31,6 +32,7 @@
         {{--})--}}
     {{--</script>--}}
     <script type="text/javascript">
+        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         $(document).ready(function(){
             $("#img").change(function(){
                 var data = new FormData();
