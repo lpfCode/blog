@@ -17,13 +17,16 @@ class FileController extends Controller {
     public function imgAdd(Request $request){
 
         echo "$request->getContent()";
+//        $img=[
+//            'stId' => $request->input('id'),
+//            'name' => $request->file('img')->getFilename()
+////            'path' => $request->file('img')->getPath()
+//        ];
         $img=[
-            'stId' => $request->input('id'),
-            'name' => $request->file('img')->getFilename()
-//            'path' => $request->file('img')->getPath()
+            'stId' => 1,
+            'name' => 'ss',
+            'path' => 'de'
         ];
-        var_dump($img);
-        dd($img);
         FileService::getInstance()->saveByArr($img);
     }
     public function fileUp(Request $request){
