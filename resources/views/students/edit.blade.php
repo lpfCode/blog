@@ -43,6 +43,7 @@
                     type:'POST',
                     url:'/file/imgadd',
                     data:data,
+                    dataType:'json',
                     cache: false,
                     contentType: false,
                     processData: false,
