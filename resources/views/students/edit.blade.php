@@ -49,6 +49,7 @@
                     processData: false,
                     success:function(data){
                         alert(data);
+                        $("#img1").attr("src", data);
                     },
                     error:function(){
                         alert('上传出错');
@@ -81,7 +82,7 @@
                 {{--<td>头像上传：<img style="height: 25px;width: 25px" src="../img/img.jpg" alt="点击添加头像" onclick="imgAdd({{$studentInfo->id}})"></td>--}}
                 <td><a href="javascript:void(0);" class="file">选择图片
                         <input type="file" multiple="multiple" id="img" name="" class="photo"></a></td>
-                <td><img style="height: 80px;width: 80px" src=""></td>
+                <td><img id="img1" style="height: 80px;width: 80px" src=""></td>
             </tr>
             <tr>
                 <td>年龄：</td>
