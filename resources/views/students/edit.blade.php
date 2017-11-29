@@ -4,61 +4,53 @@
     <title>看这里:编辑</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <script src="../js/jquery-3.2.1.min.js"></script>
-    {{--<script type="text/javascript">--}}
-        {{--function imgAdd(id) {--}}
-            {{--document.getElementById("img").click();--}}
-            {{--var data = new FormData();--}}
-            {{--$.each($('#img')[0].files, function(i, file) {--}}
-                {{--data.append('upload_file'+i, file);--}}
-            {{--});--}}
-            {{--//显示加载图片--}}
-            {{--$(".loading").show();--}}
-            {{--alert(data);--}}
-            {{--$.ajax({--}}
-                {{--type:"POST",--}}
-                {{--url:"/file/imgadd",--}}
-                {{--data:"data",--}}
-                {{--async:"true",--}}
-                {{--cache:"false",--}}
-                {{--success: function () {--}}
-                    {{--console.log(1);--}}
-                {{--},--}}
-                {{--error: function () {--}}
-                    {{--console.log(2);--}}
-                {{--}--}}
-            {{--});--}}
-        {{--}--}}
-    {{--</script>--}}
     <script type="text/javascript">
-        $(document).ready(function(){
-            //响应文件添加成功事件
-            $("#img").change(function(){
-                var data = new FormData();
-                $.each($('#img')[0].files, function(i, file) {
-                    data.append('upload_file'+i, file);
-                 });
-                $(".loading").show();    //显示加载图片
-                $.ajax({
-                    url:'file/imgadd', /*去过那个php文件*/
-                    type:'POST',  /*提交方式*/
-                    data:data,
-                    cache: false,
-                    contentType: false,        /*不可缺*/
-                    processData: false,         /*不可缺*/
-                    success:function(){
-//                        data = $(data).html();/*转格式*/
-                        alert(' 上传成功');
-                    },
-                    error:function(){
-                        alert('上传出错');
+        function imgAdd(id) {
+            $("#img").click();
+        }
+        $(function () {
+            $("#img").fileupload({
+                url:"file/imgadd",
+                autoUpload:true,
+                success:function(result){
+                    if(!result){
+                        alert("上传错误请重新上传");
+                    }else{
+                        alert("上传成功");
                     }
-                });
-            });
-            $(".close").on("click",function(){
-                $("#feedback").empty();
+                }
             });
         });
     </script>
+    {{--<script type="text/javascript">--}}
+        {{--$(document).ready(function(){--}}
+            {{--$("#img").change(function(){--}}
+                {{--var data = new FormData();--}}
+                {{--$.each($('#img')[0].files, function(i, file) {--}}
+                    {{--data.append('upload_file'+i, file);--}}
+                 {{--});--}}
+                {{--$(".loading").show();    //显示加载图片--}}
+                {{--$.ajax({--}}
+                    {{--url:'file/imgadd', /*去过那个php文件*/--}}
+                    {{--type:'POST',  /*提交方式*/--}}
+                    {{--data:data,--}}
+                    {{--cache: false,--}}
+                    {{--contentType: false,        /*不可缺*/--}}
+                    {{--processData: false,         /*不可缺*/--}}
+                    {{--success:function(){--}}
+{{--//                        data = $(data).html();/*转格式*/--}}
+                        {{--alert(' 上传成功');--}}
+                    {{--},--}}
+                    {{--error:function(){--}}
+                        {{--alert('上传出错');--}}
+                    {{--}--}}
+                {{--});--}}
+            {{--});--}}
+            {{--$(".close").on("click",function(){--}}
+                {{--$("#feedback").empty();--}}
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
 </head>
 <body>
 <div class="container">
@@ -80,9 +72,9 @@
                 <input style="display: none" type="text" name="id" value="{{ $studentInfo->id }}">
                 <td><input type="text" name="name" value="{{ $studentInfo->name }}"></td>
                 <input style="display: none" id="img" name="img" type="file" class="inputFile" />
-                {{--<td>头像上传：<img style="height: 25px;width: 25px" src="../img/img.jpg" alt="点击添加头像" onclick="imgAdd({{$studentInfo->id}})"></td>--}}
-                <td><a href="javascript:;" class="file">选择图片
-                        <input type="file" multiple="multiple" id="img" name="" class="photo"></a></td>
+                <td>头像上传：<img style="height: 25px;width: 25px" src="../img/img.jpg" alt="点击添加头像" onclick="imgAdd({{$studentInfo->id}})"></td>
+                {{--<td><a href="javascript:;" class="file">选择图片--}}
+                        {{--<input type="file" multiple="multiple" id="img" name="" class="photo"></a></td>--}}
                 <td><img style="height: 80px;width: 80px" src=""></td>
             </tr>
             <tr>
