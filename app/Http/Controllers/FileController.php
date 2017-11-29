@@ -30,6 +30,7 @@ class FileController extends Controller {
 //        FileService::getInstance()->saveByArr($img);
         dd(1);
         var_dump("ssssssss");
+        return 1;
     }
     public function fileUp(Request $request){
 
