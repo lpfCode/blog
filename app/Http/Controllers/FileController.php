@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 class FileController extends Controller {
 
     public function imgAdd(Request $request){
-        echo "$request->getContent()";
+        echo "$request->all()";
         return response()->json(array(
            'status' => 1,
             'msg' => 'ok'
