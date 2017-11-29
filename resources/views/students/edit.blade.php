@@ -6,33 +6,8 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/ajaxfileupload.js"></script>
-    {{--<script type="text/javascript">--}}
-        {{--function imgAdd(id) {--}}
-            {{--$("#img").click();--}}
-            {{--var data = new FormData();--}}
-            {{--$.each($('#img')[0].files, function(i, file) {--}}
-                {{--data.append('upload_file'+i, file);--}}
-            {{--});--}}
-        {{--}--}}
-        {{--$(function () {--}}
-            {{--$.ajax({--}}
-                {{--type:"POST",--}}
-                {{--url:"file/imgadd",--}}
-                {{--data:"data",--}}
-                {{--cache: false,--}}
-                {{--contentType: false,--}}
-                {{--processData: false,--}}
-                {{--success:function ($result) {--}}
-                    {{--console.log(1);--}}
-                {{--},--}}
-                {{--error:function () {--}}
-                    {{--console.log(2);--}}
-                {{--}--}}
-            {{--});--}}
-        {{--})--}}
-    {{--</script>--}}
     <script type="text/javascript">
-        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+//        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         $(document).ready(function(){
             $("#img").change(function(){
                 var data = new FormData();
