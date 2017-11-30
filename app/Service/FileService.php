@@ -35,6 +35,6 @@ class FileService{
     }
     //查找 by stId
     public function findByStId($value){
-        File::getInstance()->selectByStId($value);
+       return  File::getInstance()->selectByStId($value);
     }
 }
