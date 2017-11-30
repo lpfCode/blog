@@ -26,7 +26,7 @@ class FileController extends Controller {
             print_r($file);
             $file->img = $_FILES['img0']['name'];
             $file->imgType = $path;
-            $file->save();
+            FileService::getInstance()->modifyByModel($file);
             return response()->json(array(
                 'pathinfo'=>$path,
                 'img' => $_FILES['img0']['name'],
