@@ -25,7 +25,7 @@
                     contentType: false,
                     processData: false,
                     success:function(data){
-                        alert(data);
+                        alert(data.msg);
                     },
                     error:function(xhr,type){
                         alert('Ajax error!');

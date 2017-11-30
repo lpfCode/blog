@@ -29,7 +29,11 @@ class FileController extends Controller {
                 'imgType'=> $path.$_FILES['img0']['name']
             ];
             FileService::getInstance()->saveByArr($arr);
-            return response()->json(上传成功);
+            return response()->json(array(
+
+                'img' => $_FILES['img0']['name'],
+                'msg' => 'ok'
+            ));
         }
     }
     public function fileUp(Request $request){
