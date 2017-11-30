@@ -16,12 +16,21 @@ use Illuminate\Http\Request;
 class FileController extends Controller {
 
     public function imgAdd(Request $request){
-//        echo "$request->all()";
         $id = $request->get('id');
-        $file = File::find($id);
-        print_r($_FILES['img0']['tmp_name']);
-        $file->save();
-        return response()->json($_FILES['name'].上传成功);
+//        print_r($_FILES);//打印出上传的data数组
+        if(empty($_FILES['img0']['tmp_name'])){
+            return response()->json('图片不能为空');
+        }else{
+            $path = "upload";
+            $_FILES['img0']->move($path,$_FILES['img0']['tmp_name']);
+            $file=[
+                'stId' => $id,
+                'img' => $_FILES['img0']['name'],
+                'imgType'=>$path.$_FILES['img0']['name']
+            ];
+            FileService::getInstance()->saveByArr($file);
+            return response()->json($_FILES['img0']['name'].上传成功);
+        }
     }
     public function fileUp(Request $request){
 

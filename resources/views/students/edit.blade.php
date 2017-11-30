@@ -11,7 +11,7 @@
         $(document).ready(function(){
             $("#img").change(function(){
                 var data = new FormData();
-                $.each($('#img')[0].files, function(i, file) {
+                $.each($('#img')[0].files, function(i, file) {//i表示张数从0开始
                     data.append('img'+i, file);
                  });
                 var id = $("*[name='id']").val();
