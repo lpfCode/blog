@@ -23,14 +23,12 @@ class FileController extends Controller {
         }else{
             $path = "upload";
 //            $_FILES['img0']->move($path,$_FILES['img0']['tmp_name']);
-            $file=[
+            $arr=[
                 'stId' => $id,
-//                'img' => $_FILES['img0']['name'],
-//                'imgType'=> $path.$_FILES['img0']['name']
-                 'img' => "w",
-                 'imgType'=>'sss'
+                'img' => $_FILES['img0']['name'],
+                'imgType'=> $path.$_FILES['img0']['name']
             ];
-            FileService::getInstance()->saveByArr($file);
+            FileService::getInstance()->saveByArr($arr);
             return response()->json($_FILES['img0']['name'].上传成功);
         }
     }
