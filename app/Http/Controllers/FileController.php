@@ -23,7 +23,7 @@ class FileController extends Controller {
             return response()->json('图片不能为空');
         }else{
 //            $path = "/upload/".'top'.time().'jpg';
-            $path = '/project/blog/public/uploads/'.'time()'.'.jpeg';
+            $path = '/project/blog/public/uploads/'.time().'.jpeg';
             echo "$path";
 //            $_FILES['img0']->move($path,$_FILES['img0']['tmp_name']);
             $pathifo = move_uploaded_file($_FILES['img0']['tmp_name'],$path);
@@ -34,7 +34,7 @@ class FileController extends Controller {
             ];
             FileService::getInstance()->saveByArr($arr);
             return response()->json(array(
-                'pathinfo'=>$path,
+                'pathinfo'=>$pathifo,
                 'img' => $_FILES['img0']['name'],
                 'msg' => 'ok'
             ));
