@@ -22,7 +22,8 @@ class FileController extends Controller {
         if(empty($_FILES['img0']['tmp_name'])){
             return response()->json('图片不能为空');
         }else{
-            $path = "/upload/".'top'.time().'jpg';
+//            $path = "/upload/".'top'.time().'jpg';
+            $path = "/upload";
 //            $_FILES['img0']->move($path,$_FILES['img0']['tmp_name']);
             $pathifo = move_uploaded_file($_FILES['img0']['tmp_name'],$path);
             $arr=[
