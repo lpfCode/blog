@@ -17,12 +17,14 @@ class FileController extends Controller {
 
     public function imgAdd(Request $request){
         $id = $request->get('id');
+        ;
 //        print_r($_FILES);//打印出上传的data数组
         if(empty($_FILES['img0']['tmp_name'])){
             return response()->json('图片不能为空');
         }else{
-            $path = "upload";
+            $path = "/upload/".'top'.time().'jpg';
 //            $_FILES['img0']->move($path,$_FILES['img0']['tmp_name']);
+            $pathifo = move_uploaded_file($_FILES['img0']['tmp_name'],$path);
             $arr=[
                 'stId' => $id,
                 'img' => $_FILES['img0']['name'],
@@ -30,7 +32,7 @@ class FileController extends Controller {
             ];
             FileService::getInstance()->saveByArr($arr);
             return response()->json(array(
-
+                'pathinfo'=>$pathifo,
                 'img' => $_FILES['img0']['name'],
                 'msg' => 'ok'
             ));
