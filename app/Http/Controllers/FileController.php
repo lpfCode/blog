@@ -22,7 +22,9 @@ class FileController extends Controller {
         if(empty($_FILES['img0']['tmp_name'])){
             return response()->json('图片不能为空');
         }elseif(move_uploaded_file($_FILES['img0']['tmp_name'],$path)){
+            echo "$stId";
             $file = File::find($stId);
+            echo "$file";
             $file->img = $_FILES['img0']['name'];
             $file->imgType = $path;
             FileService::getInstance()->modifyByModel($file);
