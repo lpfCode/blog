@@ -25,7 +25,7 @@ class FileController extends Controller {
 //            $path = "/upload/".'top'.time().'jpg';
             $path = "/uploads";
 //            $_FILES['img0']->move($path,$_FILES['img0']['tmp_name']);
-//            $pathifo = move_uploaded_file($_FILES['img0']['tmp_name'],$path);
+            $pathifo = move_uploaded_file($_FILES['img0']['tmp_name'],$path);
             $arr=[
                 'stId' => $id,
                 'img' => $_FILES['img0']['name'],
