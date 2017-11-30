@@ -32,7 +32,7 @@ class File extends Model{
 
         $model->save();
     }
-    //通过非ID字段查找
+    //查找 by stId
     public function selectByStId($value){
         $this->where('stId',$value)->get();
     }
