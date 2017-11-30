@@ -12,7 +12,7 @@
             $("#img").change(function(){
                 var data = new FormData();
                 $.each($('#img')[0].files, function(i, file) {
-                    data.append('upload_file'+i, file);
+                    data.append('img'+i, file);
                  });
                 alert(data);
                 $.ajax({
@@ -24,7 +24,7 @@
                     contentType: false,
                     processData: false,
                     success:function(data){
-                        alert(data.status);
+                        alert(data.msg);
                     },
                     error:function(xhr,type){
                         alert('Ajax error!');

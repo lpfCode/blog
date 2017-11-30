@@ -17,7 +17,9 @@ class FileController extends Controller {
     public function imgAdd(Request $request){
 //        echo "$request->all()";
         return response()->json(array(
-           'status' => 1,
+            'imgInfo' =>$_FILES[img],
+            'imgInfo1'=>$_FILES['img'],
+            'status' => 1,
             'msg' => 'ok'
         ));
     }
