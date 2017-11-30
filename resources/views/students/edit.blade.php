@@ -14,7 +14,7 @@
                 $.each($('#img')[0].files, function(i, file) {
                     data.append('img'+i, file);
                  });
-                var id = document.getElementsByName('id').value;
+                var id = $("*[name='id']").val();
                 alert(id);
                 $.ajax({
                     type:'POST',
