@@ -34,7 +34,7 @@ class File extends Model{
     }
     //查找 by stId
     public function selectByStId($value){
-        
-       return $this->where('stId',$value)->get();
+
+       return $this->where('stId',$value)->first();
     }
 }
