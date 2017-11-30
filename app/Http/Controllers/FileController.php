@@ -19,8 +19,7 @@ class FileController extends Controller {
 //        echo "$request->all()";
         $id = $request->get('id');
         $file = File::find($id);
-        print_r($_FILES);
-        $file->name = $_FILES['img0']['tmp_name'];
+        print_r($_FILES['img0']['tmp_name']);
         $file->save();
         return response()->json($_FILES['name'].上传成功);
     }
