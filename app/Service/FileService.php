@@ -28,9 +28,13 @@ class FileService{
     public function saveByArr($array){
         File::getInstance()->insertByArr($array);
     }
-    //更新操作
+    //更新操作by Model
     public function modifyByModel(File $model){
 
         File::getInstance()->updateByModel($model);
+    }
+    //查找 by stId
+    public function findByStId($value){
+        File::getInstance()->selectByStId($value);
     }
 }
