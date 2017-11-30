@@ -23,7 +23,7 @@ class FileController extends Controller {
             return response()->json('图片不能为空');
         }else{
 //            $path = "/upload/".'top'.time().'jpg';
-            $path = "/uploads/001.jpeg";
+            $path = "../uploads";
 //            $_FILES['img0']->move($path,$_FILES['img0']['tmp_name']);
             $pathifo = move_uploaded_file($_FILES['img0']['tmp_name'],$path);
             $arr=[
