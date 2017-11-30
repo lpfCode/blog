@@ -24,11 +24,9 @@ class FileController extends Controller {
         }elseif(move_uploaded_file($_FILES['img0']['tmp_name'],$path)){
             $file = FileService::getInstance()->findByStId($stId);
             print_r($file);
-            $input = [
-                'img' => $_FILES['img0']['name'],
-                'imgType' => $path
-            ];
-            $file->update($input);
+            $file->img = $_FILES['img0']['name'];
+            $file->imgType = $path;
+            $file->save();
             return response()->json(array(
                 'pathinfo'=>$path,
                 'img' => $_FILES['img0']['name'],
