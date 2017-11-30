@@ -25,8 +25,10 @@ class FileController extends Controller {
 //            $_FILES['img0']->move($path,$_FILES['img0']['tmp_name']);
             $file=[
                 'stId' => $id,
-                'img' => $_FILES['img0']['name'],
-                'imgType'=>$path.$_FILES['img0']['name']
+//                'img' => $_FILES['img0']['name'],
+//                'imgType'=> $path.$_FILES['img0']['name']
+                 'img' => "w",
+                 'imgType'=>'sss'
             ];
             FileService::getInstance()->saveByArr($file);
             return response()->json($_FILES['img0']['name'].上传成功);
