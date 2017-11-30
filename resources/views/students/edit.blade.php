@@ -14,17 +14,18 @@
                 $.each($('#img')[0].files, function(i, file) {
                     data.append('img'+i, file);
                  });
-                alert(data);
+                var id = document.getElementById('id').value;
+                alert(id);
                 $.ajax({
                     type:'POST',
-                    url:'/file/imgadd',
+                    url:'/file/imgadd?id='+id,
                     data:data,
                     dataType:'json',
                     cache: false,
                     contentType: false,
                     processData: false,
                     success:function(data){
-                        alert(data.msg);
+                        alert(data);
                     },
                     error:function(xhr,type){
                         alert('Ajax error!');

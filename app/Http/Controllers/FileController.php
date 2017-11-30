@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\File;
 use App\Service\FileService;
 use Illuminate\Http\Request;
 
@@ -16,13 +17,11 @@ class FileController extends Controller {
 
     public function imgAdd(Request $request){
 //        echo "$request->all()";
-        return response()->json(array(
-            'imgInfo1'=>$_FILES,
-            'in'=>$request->json('img'),
-            'd' =>$request->all(),
-            'status' => 1,
-            'msg' => 'ok'
-        ));
+        $id = $request->get('id');
+        $file = File::find($id);
+        $file->name = $_FILES['name'];
+        $file->save();
+        return response()->json($_FILES['name'].上传成功);
     }
     public function fileUp(Request $request){
 
