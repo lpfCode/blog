@@ -23,9 +23,13 @@ class File extends Model{
         return self::$_instance;
     }
     /*单例定义结束*/
+    //插入操作
     public function insertByArr($array){
-
         $this->insert($array);
+    }
+    //更新操作
+    public function updateByModel(File $model){
 
+        $model->save();
     }
 }

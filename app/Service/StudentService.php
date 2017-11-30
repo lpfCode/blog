@@ -39,7 +39,7 @@ class StudentService{
 //         $this->_stuModel->saveByArray($array);
           Student::getInstance()->saveByArray($array);
      }
-//     跟新 Model格式
+//     更新 Model格式
      public function modifyByModel(Student $student){
 
 //         $this->_stuModel->saveByModel($student);

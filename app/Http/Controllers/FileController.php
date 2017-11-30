@@ -16,25 +16,18 @@ use Illuminate\Http\Request;
 class FileController extends Controller {
 
     public function imgAdd(Request $request){
-        $id = $request->get('id');
-        ;
+        $stId = $request->get('id');
 //        print_r($_FILES);//打印出上传的data数组
+        $path = '/project/blog/public/uploads/'.time().'.jpeg';
         if(empty($_FILES['img0']['tmp_name'])){
             return response()->json('图片不能为空');
-        }else{
-//            $path = "/upload/".'top'.time().'jpg';
-            $path = '/project/blog/public/uploads/'.time().'.jpeg';
-            echo "$path";
-//            $_FILES['img0']->move($path,$_FILES['img0']['tmp_name']);
-            $pathifo = move_uploaded_file($_FILES['img0']['tmp_name'],$path);
-            $arr=[
-                'stId' => $id,
-                'img' => $_FILES['img0']['name'],
-                'imgType'=> $path.$_FILES['img0']['name']
-            ];
-            FileService::getInstance()->saveByArr($arr);
+        }elseif(move_uploaded_file($_FILES['img0']['tmp_name'],$path)){
+            $file = File::find($stId);
+            $file->img = $_FILES['imgo']['name'];
+            $file->imgType = $path;
+            FileService::getInstance()->modifyByModel($file);
             return response()->json(array(
-                'pathinfo'=>$pathifo,
+                'pathinfo'=>$path,
                 'img' => $_FILES['img0']['name'],
                 'msg' => 'ok'
             ));

@@ -24,7 +24,13 @@ class FileService{
         return self::$_instance;
     }
     /*定义单例模式结束*/
+    //插入操作
     public function saveByArr($array){
         File::getInstance()->insertByArr($array);
+    }
+    //更新操作
+    public function modifyByModel(File $model){
+
+        File::getInstance()->updateByModel($model);
     }
 }
