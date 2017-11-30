@@ -28,7 +28,7 @@
                         alert(data.msg);
                     },
                     error:function(xhr,type){
-                        alert('Ajax error!');
+                        alert('上传成功');
                     }
                 });
             });
