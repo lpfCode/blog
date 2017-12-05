@@ -13,8 +13,9 @@ use Illuminate\Http\Request;
 
 class WeiXinController extends Controller{
 
-    public function api(Request $request){
+    public function api(){
 
+        echo "ssss000000";
         return view('wx.index');
     }
 }
