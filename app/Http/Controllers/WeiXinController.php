@@ -1,0 +1,20 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: yonghu
+ * Date: 2017/12/5
+ * Time: 下午4:17
+ */
+
+namespace App\Http\Controllers;
+
+
+use Illuminate\Http\Request;
+
+class WeiXinController extends Controller{
+
+    public function api(Request $request){
+
+        return view('wx.index');
+    }
+}
