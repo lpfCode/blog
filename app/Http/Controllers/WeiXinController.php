@@ -25,11 +25,10 @@ class WeiXinController extends Controller{
 //        $wx = Input::get('echostr');
 ////        return view('wx.index');
 //        return View::make('wx.index')->with('weixinInfo', $wx);
-        if(empty($_GET["echostr"])){
-
+        if($request->get('echostr')==null){
             return -1;
         }else{
-            return $_GET["echostr"];
+            return $request->get('echostr');
         }
     }
 
