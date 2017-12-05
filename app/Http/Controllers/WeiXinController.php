@@ -10,12 +10,21 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class WeiXinController extends Controller{
 
+    public function __construct(){
+
+        $this->middleware('WeiXin');
+    }
+
     public function index(){
 
-        return view('wx.index');
+        return Input::get('echostr');
+        $wx = Input::get('echostr');
+//        return view('wx.index');
+        return View::make('wx.index')->with('weixinInfo', $wx);
     }
     public function api(){
 

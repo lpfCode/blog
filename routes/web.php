@@ -1,5 +1,5 @@
 <?php
-//    namespace App\routes;
+    namespace App\routes;
 //    use App\Http\Controllers\BlogController;
 //    use Illuminate\Routing\Route;
 

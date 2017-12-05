@@ -7,6 +7,7 @@
 <body>
 <div class="container">
    echo "Hello laravel";
+    {{ weixinInfo }}
 </div>
 </body>
 </html>
