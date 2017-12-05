@@ -14,17 +14,12 @@ use Illuminate\Support\Facades\Input;
 
 class WeiXinController extends Controller{
 
-//    public function __construct(){
-//
-//        $this->middleware('WeiXin');
-//    }
+    public function __construct(){
+        print_r($_GET['echostr']);
+    }
 
     public function index(Request $request){
 
-//        return Input::get('echostr');
-//        $wx = Input::get('echostr');
-////        return view('wx.index');
-//        return View::make('wx.index')->with('weixinInfo', $wx);
         if($request->get('echostr')==null){
             return -1;
         }else{
