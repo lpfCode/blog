@@ -84,9 +84,9 @@
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
+                    {{--<a href="https://laracasts.com">Laracasts</a>--}}
+                    {{--<a href="https://laravel-news.com">News</a>--}}
+                    {{--<a href="https://forge.laravel.com">Forge</a>--}}
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="{{ URL::to('blog') }}">博客</a>
                     <a href="{{ URL::to('st') }}">数据库基本操作</a>
