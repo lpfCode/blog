@@ -90,6 +90,7 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="{{ URL::to('blog') }}">博客</a>
                     <a href="{{ URL::to('st') }}">数据库基本操作</a>
+                    <a href="{{ URL::to('wx') }}">微信平台开发</a>
                 </div>
             </div>
         </div>
