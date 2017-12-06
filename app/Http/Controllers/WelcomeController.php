@@ -38,7 +38,7 @@ class WelcomeController extends Controller{
         if($tmpStr == $signature) {
             $echostr = $_GET['echostr'];
             if($echostr) {
-                return $echostr;
+                echo $echostr;
                 exit;
             }
         }
