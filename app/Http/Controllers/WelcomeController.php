@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
+define('Token','weixin');
+
 class WelcomeController extends Controller{
 
 //    public function __construct(Request $request){
@@ -24,16 +26,29 @@ class WelcomeController extends Controller{
 //                return 1;
 //            }
 //    }
+    public function index(){
 
-    public function index(Request $request){
-
-            $data = print_r($_REQUEST, true);
-            file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
-            if(empty($_REQUEST)){
-                return -1;
-            }else{
-                return $_REQUEST['echostr'];
+        $signature = $_GET['signature'];
+        $nonce = $_GET['nonce'];
+        $timestamp = $_GET['timestamp'];
+        $tmpArr = array($timestamp,$nonce,TOKEN);
+        sort($tmpArr);
+        $tmpStr = implode($tmpArr);
+        $tmpStr = sha1($tmpStr);
+        if($tmpStr == $signature) {
+            $echostr = $_GET['echostr'];
+            if($echostr) {
+                return $echostr;
+                exit;
             }
+        }
+//<!--            $data = print_r($_REQUEST, true);-->
+//<!--            file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);-->
+//<!--            if(empty($_REQUEST)){-->
+//<!--                return -1;-->
+//<!--            }else{-->
+//<!--                return $_REQUEST['echostr'];-->
+//<!--            }-->
 //        return view('welcome');
     }
 }
