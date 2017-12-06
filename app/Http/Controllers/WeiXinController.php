@@ -17,8 +17,9 @@ class WeiXinController extends Controller{
 
     public function index(Request $request){
 
-        echo "Hello wx";
-
+        echo "public Hello wx";
+        $data = print_r($_REQUEST, true);
+        file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
         $signature = $request->get('signature');
         $timestamp = $request->get('timestamp');
         $nonce = $request->get('nonce');
@@ -41,3 +42,4 @@ class WeiXinController extends Controller{
     }
 
 }
+//http://118.89.227.17/wx&callback_token=weixin&encoding_aeskey=VGuuX9slAYZkPdT9QMhOO4hqvuPzImGLQlHGHwjtQ1q&callback_encrypt_mode=0&operation_seq=433218347
