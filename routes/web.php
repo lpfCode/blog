@@ -33,5 +33,7 @@ Route::post('/st/update', 'StudentController@update');
 Route::get('/st/tjcx', 'StudentController@tjcx');
 Route::post('/file/imgadd', 'FileController@imgAdd');
 Route::post('/file/fileup', 'FileController@fileUp');
-Route::any('/wx', 'WeiXinController@index');
+//Route::any('/wx', 'WeiXinController@index');
+Route::get('/wx', 'WeiXinController@index');
+Route::post('/wx', 'WeiXinController@index');
 Route:any('/wx/api', 'WeiXinController@api');

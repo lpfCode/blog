@@ -16,7 +16,7 @@ class WeiXinController extends Controller{
 
 
     public function index(Request $request){
-        
+
         $signature = $request->get('signature');
         $timestamp = $request->get('timestamp');
         $nonce = $request->get('nonce');
