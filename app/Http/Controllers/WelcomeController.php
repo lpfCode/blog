@@ -29,11 +29,10 @@ class WelcomeController extends Controller{
 
             $data = print_r($_REQUEST, true);
             file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
-//            dd($_REQUEST);
             if(empty($_REQUEST)){
                 return -1;
             }else{
-                return $_REQUEST['timestamp'];
+                return $_REQUEST['echostr'];
             }
 //        return view('welcome');
     }
