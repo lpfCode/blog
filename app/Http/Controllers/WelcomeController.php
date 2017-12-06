@@ -11,7 +11,7 @@ class WelcomeController extends Controller{
     public function index(Request $request){
 
             $data = print_r($_REQUEST, true);
-//            file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
+            file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
 //            $signature = $request->get('signature');
 //            echo "$signature";
 //            $timestamp = $request->get('timestamp');
@@ -26,10 +26,7 @@ class WelcomeController extends Controller{
 //            } else {
 //                return $signature;
 //            }
-        dd(1);
-        dd($data);
-        var_dump($data);
-        return $data['signature'];
+        return $data['echostr'];
 
 
 
