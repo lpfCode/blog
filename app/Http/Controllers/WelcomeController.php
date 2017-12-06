@@ -7,12 +7,6 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller{
 
-    public function __construct(){
-
-        $_SERVER['REMOTE_ADDR'];
-        $_SERVER['QUERY_STRING'];
-        echo "Hello wx";
-    }
 
     public function index(Request $request){
 
@@ -20,6 +14,7 @@ class WelcomeController extends Controller{
             $data = print_r($_REQUEST, true);
             file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
             $signature = $request->get('signature');
+            echo "$signature";
             $timestamp = $request->get('timestamp');
             $nonce = $request->get('nonce');
             $token = 'weixin';
