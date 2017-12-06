@@ -7,6 +7,10 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
+echo "Hello public";
+$data = print_r($_REQUEST, true);
+file_put_contents('/tmp/b.txt', $data . "\n", FILE_APPEND);
+
 define('LARAVEL_START', microtime(true));
 
 /*
