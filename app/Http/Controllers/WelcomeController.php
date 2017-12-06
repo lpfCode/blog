@@ -29,6 +29,7 @@ class WelcomeController extends Controller{
 
             $data = print_r($_REQUEST, true);
             file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
+            dd($_REQUEST);
             if(empty($_REQUEST)){
                 return -1;
             }else{
