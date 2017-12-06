@@ -14,10 +14,16 @@ use Illuminate\Support\Facades\Input;
 
 class WeiXinController extends Controller{
 
+    public function __construct(){
+
+        $_SERVER['REMOTE_ADDR'];
+        $_SERVER['QUERY_STRING'];
+        echo "Hello wx";
+    }
 
     public function index(Request $request){
 
-        echo "public Hello wx";
+        echo "Hello wx";
         $data = print_r($_REQUEST, true);
         file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
         $signature = $request->get('signature');
