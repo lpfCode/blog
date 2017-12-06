@@ -28,27 +28,27 @@ class WelcomeController extends Controller{
 //    }
     public function index(){
 
-        $signature = $_GET['signature'];
-        $nonce = $_GET['nonce'];
-        $timestamp = $_GET['timestamp'];
-        $tmpArr = array($timestamp,$nonce,TOKEN);
-        sort($tmpArr);
-        $tmpStr = implode($tmpArr);
-        $tmpStr = sha1($tmpStr);
-        if($tmpStr == $signature) {
-            $echostr = $_GET['echostr'];
-            if($echostr) {
-                echo $echostr;
-                exit;
+//        $signature = $_GET['signature'];
+//        $nonce = $_GET['nonce'];
+//        $timestamp = $_GET['timestamp'];
+//        $tmpArr = array($timestamp,$nonce,TOKEN);
+//        sort($tmpArr);
+//        $tmpStr = implode($tmpArr);
+//        $tmpStr = sha1($tmpStr);
+//        if($tmpStr == $signature) {
+//            $echostr = $_GET['echostr'];
+//            if($echostr) {
+//                echo $echostr;
+//                exit;
+//            }
+//        }
+           $data = print_r($_REQUEST, true);
+            file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
+            if(empty($_REQUEST)){
+                return -1;
+            }else{
+                return $_REQUEST['echostr'];
             }
-        }
-//<!--            $data = print_r($_REQUEST, true);-->
-//<!--            file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);-->
-//<!--            if(empty($_REQUEST)){-->
-//<!--                return -1;-->
-//<!--            }else{-->
-//<!--                return $_REQUEST['echostr'];-->
-//<!--            }-->
 //        return view('welcome');
     }
 }
