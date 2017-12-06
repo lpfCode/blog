@@ -26,7 +26,7 @@ class WelcomeController extends Controller{
 //                return 1;
 //            }
 //    }
-    public function index(){
+    public function index(Request $request){
 
 //        $signature = $_GET['signature'];
 //        $nonce = $_GET['nonce'];
@@ -42,13 +42,11 @@ class WelcomeController extends Controller{
 //                exit;
 //            }
 //        }
-           $data = print_r($_REQUEST, true);
-            file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
-            if(empty($_REQUEST)){
-                return -1;
-            }else{
-                return $_REQUEST['echostr'];
+//           $data = print_r($_REQUEST, true);
+//            file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
+            if($request->input('echostr')) {
+                file_put_contents('/tmp/a.txt', $request->input('echostr') . "\n", FILE_APPEND);
+                echo $request->input('echostr');
             }
-//        return view('welcome');
     }
 }
