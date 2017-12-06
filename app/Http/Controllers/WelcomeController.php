@@ -26,6 +26,8 @@ class WelcomeController extends Controller{
 //            } else {
 //                return $signature;
 //            }
+        dd($data);
+        var_dump($data);
         return $data['signature'];
 
 
