@@ -47,6 +47,7 @@ class WelcomeController extends Controller{
             if($request->input('echostr')) {
                 file_put_contents('/tmp/a.txt', $request->input('echostr') . "\n", FILE_APPEND);
                 echo $request->input('echostr');
+                exit;
             }
     }
 }
