@@ -17,10 +17,12 @@ class WeiXinController extends Controller{
 
     public function index(Request $request){
 
+        echo "Hello wx";
+
         $signature = $request->get('signature');
         $timestamp = $request->get('timestamp');
         $nonce = $request->get('nonce');
-        $token = 202910;
+        $token = 'weixin';
         $my_signature = array($token,$timestamp,$nonce);
         sort($my_signature,SORT_STRING);
         $my_signature = implode($my_signature);
