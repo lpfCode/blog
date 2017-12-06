@@ -29,10 +29,10 @@ class WelcomeController extends Controller{
 
             $data = print_r($_REQUEST, true);
             file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
-            if(empty($data)){
+            if($data==null){
                 return -1;
             }else{
-                return $data['echostr'];
+                return $data;
             }
 //        return view('welcome');
     }
