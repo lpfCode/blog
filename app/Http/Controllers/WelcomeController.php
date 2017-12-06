@@ -32,7 +32,7 @@ class WelcomeController extends Controller{
             if(empty($_REQUEST)){
                 return -1;
             }else{
-                return $_REQUEST;
+                return $_REQUEST['timestamp'];
             }
 //        return view('welcome');
     }
