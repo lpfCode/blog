@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class WelcomeController extends Controller{
 
@@ -26,9 +27,7 @@ class WelcomeController extends Controller{
 //            } else {
 //                return $signature;
 //            }
-        return $data['echostr'];
-
-
+        return Input::get('echostr');
 
 //        return view('welcome');
     }
