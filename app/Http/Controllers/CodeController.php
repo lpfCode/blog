@@ -44,7 +44,7 @@ class CodeController extends Controller {
         $max_depth = 1;
         foreach ($array as $value) {
             if (is_array($value)) {
-                $depth = array_depth($value) + 1;
+                $depth = Self::array_depth($value) + 1;
 
                 if ($depth > $max_depth) {
                     $max_depth = $depth;
