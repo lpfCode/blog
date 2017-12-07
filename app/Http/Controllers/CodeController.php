@@ -145,11 +145,13 @@ class CodeController extends Controller {
             $da = array_keys($array[$data[$i]]);
 //            print_r($da);
             for($j=0;$j<count($da);$j++){
-                if(array_search('w0w',$array[$data[$i]][$da[$j]])!=null){
+                if(array_search('w0w',$array[$data[$i]][$da[$j]]) != null){
                     return $data[$i];
+                    break;
                 }
             }
         }
+        return -1;
     }
     private static function array_depth($array){
 
