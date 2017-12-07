@@ -19,23 +19,23 @@
     @if (Session::has('message'))
         <div class="alert alert-info">{{ Session::get('message') }}</div>
     @endif
-    <div>
-        <form method="get" action="/st/tjcx">
-            {{ csrf_field() }}
-            <tr>
-                <td>关键字：
-                    <select name="key">
-                        <option value="name" @if($data['key']=='name') selected @endif>姓名</option>
-                        <option value="age" @if($data['key']=='age') selected @endif>年龄</option>
-                        <option value="obj" @if($data['key']=='obj') selected @endif>科目</option>
-                        <option value="score" @if($data['key']=='score') selected @endif>分数</option>
-                    </select>
-                </td>
-                <td><input type="text" name="value" value="{{$data['value']}}"></td>
-                <td><input type="submit" value="检索"></td>
-            </tr>
-        </form>
-    </div>
+    {{--<div>--}}
+        {{--<form method="get" action="/st/tjcx">--}}
+            {{--{{ csrf_field() }}--}}
+            {{--<tr>--}}
+                {{--<td>关键字：--}}
+                    {{--<select name="key">--}}
+                        {{--<option value="name" @if($data['key']=='name') selected @endif>姓名</option>--}}
+                        {{--<option value="age" @if($data['key']=='age') selected @endif>年龄</option>--}}
+                        {{--<option value="obj" @if($data['key']=='obj') selected @endif>科目</option>--}}
+                        {{--<option value="score" @if($data['key']=='score') selected @endif>分数</option>--}}
+                    {{--</select>--}}
+                {{--</td>--}}
+                {{--<td><input type="text" name="value" value="{{$data['value']}}"></td>--}}
+                {{--<td><input type="submit" value="检索"></td>--}}
+            {{--</tr>--}}
+        {{--</form>--}}
+    {{--</div>--}}
     <table class="table table-striped table-bordered">
         <thead>
         <tr>
@@ -45,19 +45,19 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($data['info'] as $key => $value)
+        {{--@foreach($data['info'] as $key => $value)--}}
             <tr>
                 <td>{{ $value->id }}</td>
                 <td>{{ $value->pro}}</td>
                 <td>
                     {{--<a class="btn btn-small btn-success" href="/st/destroy?id={{ $value->id }}">删除</a>--}}
-                    <a class="btn btn-small btn-info" href="/code/muliArray?id={{ $value->id }}">运行</a>
+                    <a class="btn btn-small btn-info" href="/code/muliArray">运行</a>
                 </td>
             </tr>
-        @endforeach
+        {{--@endforeach--}}
         </tbody>
     </table>
-    <div align="right"><tr>{{$data['info']->links()}}</tr></div>
+    {{--<div align="right"><tr>{{$data['info']->links()}}</tr></div>--}}
 </div>
 </body>
 </html>
