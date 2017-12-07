@@ -47,8 +47,8 @@
         <tbody>
         {{--@foreach($data['info'] as $key => $value)--}}
             <tr>
-                <td>{{ $value->id }}</td>
-                <td>{{ $value->pro}}</td>
+                <td></td>
+                <td></td>
                 <td>
                     {{--<a class="btn btn-small btn-success" href="/st/destroy?id={{ $value->id }}">删除</a>--}}
                     <a class="btn btn-small btn-info" href="/code/muliArray">运行</a>
