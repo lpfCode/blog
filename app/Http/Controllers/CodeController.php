@@ -32,11 +32,11 @@ class CodeController extends Controller {
                 'io'=>'90'
             ]
         ];
-        $num = array_depth($country);
+        $num = $this->array_depth($country);
         echo "$num";
         return $num;
     }
-    public static function array_depth($array){
+    private static function array_depth($array){
 
         echo "hello!";
 
