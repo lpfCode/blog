@@ -134,8 +134,6 @@ class CodeController extends Controller {
         for($i=0;$i<$legth;$i++){
             if(array_search('90',$array[$data[$i]])!=null){
                 return $data[$i];
-            }else{
-                return false;
             }
         }
     }
@@ -149,7 +147,9 @@ class CodeController extends Controller {
             for($j=0;$j<count($da);$j++){
                 if(array_search('90',$array[$data[$i]][$da[$j]])!=null){
                     return $data[$i];
+                    break;
                 }
+                return -1;
             }
         }
     }
