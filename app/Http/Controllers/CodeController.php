@@ -143,10 +143,8 @@ class CodeController extends Controller {
             $da = array_keys($array[$data[$i]]);
             print_r($da);
             for($j=0;$j<count($da);$j++){
-                if(array_search('90',$array[$data[$da[$j]]])!=null){
+                if(array_search('90',$array[$data[$i][$j]])!=null){
                     return $i;
-                }else{
-                    return false;
                 }
             }
         }
