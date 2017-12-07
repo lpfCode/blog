@@ -103,7 +103,7 @@ class CodeController extends Controller {
                 'hubei'=>[
 
                     'huanggang' => 'longgan',
-                    'ssss'      => 'ww',
+                    'ssss'      => 'w0w',
                     'aaaa'      => '90'
                 ]
             ]
@@ -145,11 +145,8 @@ class CodeController extends Controller {
             $da = array_keys($array[$data[$i]]);
 //            print_r($da);
             for($j=0;$j<count($da);$j++){
-                if(array_search('90',$array[$data[$i]][$da[$j]])!=null){
+                if(array_search('w0w',$array[$data[$i]][$da[$j]])!=null){
                     return $data[$i];
-                    break;
-                }else{
-                    return -1;
                 }
             }
         }
