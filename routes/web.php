@@ -17,7 +17,8 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::any('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index');
+Route::post('/', 'WelcomeController@index');
 Route::get('/blog', 'BlogController@index');
 Route::get('/blog/edit', 'BlogController@edit');
 Route::get('/blog/destroy', 'BlogController@destroy');
