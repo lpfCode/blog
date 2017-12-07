@@ -75,6 +75,7 @@ class CodeController extends Controller {
         return view('code.index');
     }
     public function MuliArray(){
+
         $array = [
 
             'CHINA'=> [
@@ -137,10 +138,12 @@ class CodeController extends Controller {
     private static function arrayThreeSearchKey($array){
 
         $data = array_keys($array);
+        print_r($data);
         for($i=0;$i<count($data);$i++){
             $da = array_keys($array[$data[$i]]);
+            print_r($da);
             for($j=0;$j<count($da);$j++){
-                if(array_search('90',$array[$data[$da[$j]]])){
+                if(array_search('90',$array[$data[$da[$j]]])!=null){
                     return $i;
                 }else{
                     return false;
