@@ -38,3 +38,5 @@ Route::any('/wx', 'WeiXinController@index');
 //Route::get('/wx', 'WeiXinController@index');
 //Route::post('/wx', 'WeiXinController@index');
 Route:any('/wx/api', 'WeiXinController@api');
+Route::get('/code', 'CodeController@index');
+Route::get('/code/muliArray', 'CodeController@MuliArray');

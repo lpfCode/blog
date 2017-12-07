@@ -9683,7 +9683,7 @@ abstenu, autant par pusillanimité que par délicatesse.
 
 Souvent, lorsqu'il restait à lire dans sa chambre, ou bien assis
 le soir sous les tilleuls du Luxembourg, il laissait tomber son
-Code par terre, et le souvenir d'Emma lui revenait. Mais peu à peu
+code par terre, et le souvenir d'Emma lui revenait. Mais peu à peu
 ce sentiment s'affaiblit, et d'autres convoitises s'accumulèrent
 par-dessus, bien qu'il persistât cependant à travers elles; car
 Léon ne perdait pas toute espérance, et il y avait pour lui comme
@@ -12002,7 +12002,7 @@ chien. C'est très curieux!
 Et comme le clerc s'obstinait toujours:
 
 -- J'y vais aussi. Je lirai un journal en vous attendant, ou je
-feuilletterai un Code.
+feuilletterai un code.
 
 Léon, étourdi par la colère d'Emma, le bavardage de M. Homais et
 peut-être les pesanteurs du déjeuner, restait indécis et comme

@@ -4167,7 +4167,7 @@ EOT;
     /*
     *** START: FULL LICENSE ***
 
-    Creative Commons Legal Code
+    Creative Commons Legal code
 
     Attribution-ShareAlike 3.0 Unported
 

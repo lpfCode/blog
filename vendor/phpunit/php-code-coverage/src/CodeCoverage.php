@@ -87,7 +87,7 @@ class CodeCoverage
     private $currentId;
 
     /**
-     * Code coverage data.
+     * code coverage data.
      *
      * @var array
      */

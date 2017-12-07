@@ -14,7 +14,7 @@ use Doctrine\Instantiator\Exception\UnexpectedValueException as InstantiatorUnex
 use PHPUnit\Util\InvalidArgumentHelper;
 
 /**
- * Mock Object Code Generator
+ * Mock Object code Generator
  */
 class PHPUnit_Framework_MockObject_Generator
 {

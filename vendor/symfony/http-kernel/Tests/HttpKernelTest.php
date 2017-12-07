@@ -119,14 +119,14 @@ class HttpKernelTest extends TestCase
     {
         $dispatcher = new EventDispatcher();
         $dispatcher->addListener(KernelEvents::EXCEPTION, function ($event) use ($responseStatusCode, $expectedStatusCode) {
-            $event->setResponse(new Response('', $responseStatusCode, array('X-Status-Code' => $expectedStatusCode)));
+            $event->setResponse(new Response('', $responseStatusCode, array('X-Status-code' => $expectedStatusCode)));
         });
 
         $kernel = $this->getHttpKernel($dispatcher, function () { throw new \RuntimeException(); });
         $response = $kernel->handle(new Request());
 
         $this->assertEquals($expectedStatusCode, $response->getStatusCode());
-        $this->assertFalse($response->headers->has('X-Status-Code'));
+        $this->assertFalse($response->headers->has('X-Status-code'));
     }
 
     public function getStatusCodes()

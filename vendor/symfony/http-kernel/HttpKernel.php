@@ -241,12 +241,12 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
         $response = $event->getResponse();
 
         // the developer asked for a specific status code
-        if ($response->headers->has('X-Status-Code')) {
-            @trigger_error(sprintf('Using the X-Status-Code header is deprecated since version 3.3 and will be removed in 4.0. Use %s::allowCustomResponseCode() instead.', GetResponseForExceptionEvent::class), E_USER_DEPRECATED);
+        if ($response->headers->has('X-Status-code')) {
+            @trigger_error(sprintf('Using the X-Status-code header is deprecated since version 3.3 and will be removed in 4.0. Use %s::allowCustomResponseCode() instead.', GetResponseForExceptionEvent::class), E_USER_DEPRECATED);
 
-            $response->setStatusCode($response->headers->get('X-Status-Code'));
+            $response->setStatusCode($response->headers->get('X-Status-code'));
 
-            $response->headers->remove('X-Status-Code');
+            $response->headers->remove('X-Status-code');
         } elseif (!$event->isAllowingCustomResponseCode() && !$response->isClientError() && !$response->isServerError() && !$response->isRedirect()) {
             // ensure that we actually have an error response
             if ($e instanceof HttpExceptionInterface) {

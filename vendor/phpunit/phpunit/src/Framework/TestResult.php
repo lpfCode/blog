@@ -90,7 +90,7 @@ class TestResult implements Countable
     protected $topTestSuite;
 
     /**
-     * Code Coverage information.
+     * code Coverage information.
      *
      * @var CodeCoverage
      */

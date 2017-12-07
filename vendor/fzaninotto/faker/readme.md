@@ -922,7 +922,7 @@ echo $faker->cellNumber; // "021 123 4567"
 // Generates a toll free number
 echo $faker->tollFreeNumber; // "0800 123 456"
 
-// Area Code
+code
 echo $faker->areaCode; // "03"
 ```
 
@@ -1421,7 +1421,7 @@ echo $faker->firstNameMale; // "Adrian"
 echo $faker->firstNameFemale; // "Miruna"
 
 
-// Generates a random Personal Numerical Code (CNP)
+code
 echo $faker->cnp; // "2800523081231"
 // Valid option values:
 //    $gender: null (random), male, female
@@ -1455,7 +1455,7 @@ echo $faker->bank; // "ОТП Банк"
 //Generate a Russian Tax Payment Number for Company
 echo $faker->inn; //  7813540735
 
-//Generate a Russian Tax Code for Company
+code
 echo $faker->kpp; // 781301001
 ```
 

@@ -1781,7 +1781,7 @@ class Request
     /*
      * The following methods are derived from code of the Zend Framework (1.10dev - 2010-01-24)
      *
-     * Code subject to the new BSD license (http://framework.zend.com/license/new-bsd).
+     * code subject to the new BSD license (http://framework.zend.com/license/new-bsd).
      *
      * Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
      */

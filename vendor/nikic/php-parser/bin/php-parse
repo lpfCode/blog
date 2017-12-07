@@ -46,7 +46,7 @@ $traverser->addVisitor(new PhpParser\NodeVisitor\NameResolver);
 foreach ($files as $file) {
     if (strpos($file, '<?php') === 0) {
         $code = $file;
-        echo "====> Code $code\n";
+        echo "====> code $code\n";
     } else {
         if (!file_exists($file)) {
             die("File $file does not exist.\n");

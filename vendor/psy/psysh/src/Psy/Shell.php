@@ -519,7 +519,7 @@ class Shell extends Application
     public function addCode($code)
     {
         try {
-            // Code lines ending in \ keep the buffer open
+            // code lines ending in \ keep the buffer open
             if (substr(rtrim($code), -1) === '\\') {
                 $this->codeBufferOpen = true;
                 $code = substr(rtrim($code), 0, -1);

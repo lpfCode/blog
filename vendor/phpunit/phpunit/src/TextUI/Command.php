@@ -1025,7 +1025,7 @@ class Command
 Usage: phpunit [options] UnitTest [UnitTest.php]
        phpunit [options] <directory>
 
-Code Coverage Options:
+code Coverage Options:
 
   --coverage-clover <file>    Generate code coverage report in Clover XML format.
   --coverage-crap4j <file>    Generate code coverage report in Crap4J XML format.

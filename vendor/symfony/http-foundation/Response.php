@@ -115,7 +115,7 @@ class Response
      * Status codes translation table.
      *
      * The list of codes is complete according to the
-     * {@link http://www.iana.org/assignments/http-status-codes/ Hypertext Transfer Protocol (HTTP) Status Code Registry}
+     * {@link http://www.iana.org/assignments/http-status-codes/ Hypertext Transfer Protocol (HTTP) Status code Registry}
      * (last updated 2016-03-01).
      *
      * Unless otherwise noted, the status code is defined in RFC2616.

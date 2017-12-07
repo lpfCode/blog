@@ -108,7 +108,7 @@ class Parsedown
     # ~
 
     protected $unmarkedBlockTypes = array(
-        'Code',
+        'code',
     );
 
     #
@@ -289,7 +289,7 @@ class Parsedown
     }
 
     #
-    # Code
+    # code
 
     protected function blockCode($Line, $Block = null)
     {
@@ -392,7 +392,7 @@ class Parsedown
     }
 
     #
-    # Fenced Code
+    # Fenced code
 
     protected function blockFencedCode($Line)
     {
@@ -984,7 +984,7 @@ class Parsedown
         '>' => array('SpecialCharacter'),
         '[' => array('Link'),
         '_' => array('Emphasis'),
-        '`' => array('Code'),
+        '`' => array('code'),
         '~' => array('Strikethrough'),
         '\\' => array('EscapeSequence'),
     );

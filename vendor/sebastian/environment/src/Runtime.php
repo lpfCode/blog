@@ -34,7 +34,7 @@ final class Runtime
     /**
      * Returns true when OPcache is loaded and opcache.save_comments=0 is set.
      *
-     * Code taken from Doctrine\Common\Annotations\AnnotationReader::__construct().
+     * code taken from Doctrine\Common\Annotations\AnnotationReader::__construct().
      */
     public function discardsComments(): bool
     {

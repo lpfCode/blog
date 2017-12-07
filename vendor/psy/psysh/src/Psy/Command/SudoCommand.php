@@ -65,7 +65,7 @@ class SudoCommand extends Command
         $this
             ->setName('sudo')
             ->setDefinition(array(
-                new CodeArgument('code', InputArgument::REQUIRED, 'Code to execute.'),
+                new CodeArgument('code', InputArgument::REQUIRED, 'code to execute.'),
             ))
             ->setDescription('Evaluate PHP code, bypassing visibility restrictions.')
             ->setHelp(
