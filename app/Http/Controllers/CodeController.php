@@ -67,14 +67,46 @@ class CodeController extends Controller {
         ];
         //$this->MuliArray($country);
         //$this->MuliArray($coun);
-        $this->MuliArray($UK);
+//        $this->MuliArray($UK);
     }
 
     public function index(){
 
         return view('code.index');
     }
-    public function MuliArray($array){
+    public function MuliArray(){
+        $array = [
+
+            'CHINA'=> [
+
+                'hebei'=>[
+
+                    'shijiazhuang' => 'zhengding',
+                    'cangzhou'     => 'yanshan',
+                    'xingtai'      => 'pingxiang'
+                ],
+                'hubei'=>[
+
+                    'huanggang' => 'longgan',
+                    'ssss'      => 'ww',
+                    'aaaa'      => 'lll'
+                ]
+            ],
+            'UK'=>[
+                'hebei'=>[
+
+                    'shijiazhuang' => 'zhengding',
+                    'cangzhou'     => 'yanshan',
+                    'xingtai'      => 'pingxiang'
+                ],
+                'hubei'=>[
+
+                    'huanggang' => 'longgan',
+                    'ssss'      => 'ww',
+                    'aaaa'      => '90'
+                ]
+            ]
+        ];
 
         $num = $this->array_depth($array);
         if($num==2){
