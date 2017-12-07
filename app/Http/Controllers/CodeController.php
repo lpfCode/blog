@@ -144,7 +144,7 @@ class CodeController extends Controller {
             print_r($da);
             for($j=0;$j<count($da);$j++){
                 if(array_search('90',$array[$data[$i]][$da[$j]])!=null){
-                    return $i;
+                    return $data[$i];
                 }
             }
         }
