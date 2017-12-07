@@ -137,8 +137,17 @@ class CodeController extends Controller {
     private static function arrayThreeSearchKey($array){
 
         $data = array_keys($array);
-        print_r($array[$data[0]]);
-        return count($array[$data[0]]);
+        for($i=0;$i<count($data);$i++){
+            $da = array_keys($array[$data[$i]]);
+            for($j=0;$j<count($da);$j++){
+//                if(array_search('90',$array[$data[$da[$j]]])){
+//                    return $i;
+//                }else{
+//                    return false;
+//                }
+                return array_search('90',$array[$data[$da[$j]]]);
+            }
+        }
     }
     private static function array_depth($array){
 
