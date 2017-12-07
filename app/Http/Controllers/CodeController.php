@@ -33,7 +33,15 @@ class CodeController extends Controller {
             ]
         ];
         $num = $this->array_depth($country);
-        return $num;
+        if($num==2){
+            $res = $this->arraySearchKey($country);
+        }
+        return $res;
+    }
+    private static function arraySearchKey($country){
+
+        print_r(array_keys($country));
+        echo array_search('1234',$country['CHINA']);
     }
     private static function array_depth($array){
 
@@ -43,7 +51,6 @@ class CodeController extends Controller {
         foreach ($array as $value) {
             if (is_array($value)) {
                 $depth = Self::array_depth($value) + 1;
-
                 if ($depth > $max_depth) {
                     $max_depth = $depth;
                 }
