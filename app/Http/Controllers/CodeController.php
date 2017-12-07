@@ -121,15 +121,19 @@ class CodeController extends Controller {
     }
     private static function arrayOneSearchKey($array){
 
-        return array_search('90',$array);
+        if(array_search('90',$array)!=null){
+            return array_search('90',$array);
+        }else{
+            return false;
+        }
     }
     private static function arrayTwoSearchKey($array){
 
         $data = array_keys($array);
         $legth = count($data);
         for($i=0;$i<$legth;$i++){
-            if(array_search('90',$array[$data[$i]])){
-                return $i;
+            if(array_search('90',$array[$data[$i]])!=null){
+                return $data[$i];
             }else{
                 return false;
             }
@@ -138,13 +142,15 @@ class CodeController extends Controller {
     private static function arrayThreeSearchKey($array){
 
         $data = array_keys($array);
-        print_r($data);
+//        print_r($data);
         for($i=0;$i<count($data);$i++){
             $da = array_keys($array[$data[$i]]);
-            print_r($da);
+//            print_r($da);
             for($j=0;$j<count($da);$j++){
-                if(array_search('90',$array[$data[$i]][$da[$j]])!=null){
+                if(array_search('900',$array[$data[$i]][$da[$j]])!=null){
                     return $data[$i];
+                }else{
+                    return false;
                 }
             }
         }
