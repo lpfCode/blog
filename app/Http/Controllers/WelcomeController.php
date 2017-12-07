@@ -44,10 +44,9 @@ class WelcomeController extends Controller{
 //        }
 //           $data = print_r($_REQUEST, true);
 //            file_put_contents('/tmp/a.txt', $data . "\n", FILE_APPEND);
-            if($request->input('echostr')) {
-                file_put_contents('/tmp/a.txt', $request->input('echostr') . "\n", FILE_APPEND);
-                echo $request->input('echostr');
-                exit;
+            if($_GET['echostr']) {
+                file_put_contents('/tmp/a.txt', $_GET['echostr'] . "\n", FILE_APPEND);
+                echo $_GET['echostr'];
             }
     }
 }
