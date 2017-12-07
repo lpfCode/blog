@@ -12,11 +12,7 @@ use App\Http\Controllers\Controller;
 
 class CodeController extends Controller {
 
-    public function index(){
-
-        return view('code.index');
-    }
-    public function MuliArray(){
+    public function __construct(){
 
         $country = [
 
@@ -25,23 +21,92 @@ class CodeController extends Controller {
                 'hebei'=>'shijianzhuang',
                 'hubei'=>'wuhan',
                 'gansu'=>'lanzhou'
-             ],
+            ],
             'USA'=>[
                 'jiazhou'=>'ss',
                 'ji'=>'23',
                 'io'=>'90'
             ]
         ];
-        $num = $this->array_depth($country);
+        $coun = [
+
+            'CHINA' => '90',
+            'USA' => '900'
+        ];
+        $UK = [
+
+            'CHINA'=> [
+
+                'hebei'=>[
+
+                    'shijiazhuang' => 'zhengding',
+                    'cangzhou'     => 'yanshan',
+                    'xingtai'      => 'pingxiang'
+                ],
+                'hubei'=>[
+
+                    'huanggang' => 'longgan',
+                    'ssss'      => 'ww',
+                    'aaaa'      => 'lll'
+                ]
+            ],
+            'UK'=>[
+                'hebei'=>[
+
+                    'shijiazhuang' => 'zhengding',
+                    'cangzhou'     => 'yanshan',
+                    'xingtai'      => 'pingxiang'
+                ],
+                'hubei'=>[
+
+                    'huanggang' => 'longgan',
+                    'ssss'      => 'ww',
+                    'aaaa'      => '90'
+                ]
+            ]
+        ];
+        //$this->MuliArray($country);
+        //$this->MuliArray($coun);
+        $this->MuliArray($UK);
+    }
+
+    public function index(){
+
+        return view('code.index');
+    }
+    public function MuliArray($array){
+
+        $num = $this->array_depth($array);
         if($num==2){
-            $res = $this->arraySearchKey($country);
+            $res = $this->arrayOneSearchKey($array);
+        }elseif ($num ==1){
+            $res = $this->arrayTwoSearchKey($array);
+        }else{
+            $res = $this->arrayThreeSearchKey($array);
         }
         return $res;
     }
-    private static function arraySearchKey($country){
+    private static function arrayOneSearchKey($array){
 
-        $data = array_keys($country);
-        return array_search('90',$country[$data[1]]);
+        return array_search('90',$array);
+    }
+    private static function arrayTwoSearchKey($array){
+
+        $data = array_keys($array);
+        $legth = count($data);
+        for($i=0;$i<$legth;$i++){
+            if(array_search('90',$array[$data[$i]])){
+                return $i;
+            }else{
+                return false;
+            }
+        }
+    }
+    private static function arrayThreeSearchKey($array){
+
+        $data = array_keys($array);
+        print_r($data);
+        return count($data);
     }
     private static function array_depth($array){
 
