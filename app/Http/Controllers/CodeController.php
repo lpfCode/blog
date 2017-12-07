@@ -65,9 +65,9 @@ class CodeController extends Controller {
                 ]
             ]
         ];
-        $this->_country  = $UK;
-        $this->_coun = $coun;
-        $this->_UK = $UK;
+        //$this->MuliArray($country);
+        //$this->MuliArray($coun);
+//        $this->MuliArray($UK);
     }
 
     public function index(){
@@ -75,13 +75,47 @@ class CodeController extends Controller {
         return view('code.index');
     }
     public function MuliArray(){
-        $num = $this->array_depth($this->_country);
+
+        $array = [
+
+            'CHINA'=> [
+
+                'hebei'=>[
+
+                    'shijiazhuang' => 'zhengding',
+                    'cangzhou'     => 'yanshan',
+                    'xingtai'      => 'pingxiang'
+                ],
+                'hubei'=>[
+
+                    'huanggang' => 'longgan',
+                    'ssss'      => 'ww',
+                    'aaaa'      => 'lll'
+                ]
+            ],
+            'UK'=>[
+                'hebei'=>[
+
+                    'shijiazhuang' => 'zhengding',
+                    'cangzhou'     => 'yanshan',
+                    'xingtai'      => 'pingxiang'
+                ],
+                'hubei'=>[
+
+                    'huanggang' => 'longgan',
+                    'ssss'      => 'ww',
+                    'aaaa'      => '90'
+                ]
+            ]
+        ];
+
+        $num = $this->array_depth($array);
         if($num==2){
-            $res = $this->arrayOneSearchKey($this->_country);
+            $res = $this->arrayOneSearchKey($array);
         }elseif ($num ==1){
-            $res = $this->arrayTwoSearchKey($this->_country);
+            $res = $this->arrayTwoSearchKey($array);
         }else{
-            $res = $this->arrayThreeSearchKey($this->_country);
+            $res = $this->arrayThreeSearchKey($array);
         }
         return $res;
     }
@@ -108,10 +142,10 @@ class CodeController extends Controller {
     private static function arrayThreeSearchKey($array){
 
         $data = array_keys($array);
-        print_r($data);
+//        print_r($data);
         for($i=0;$i<count($data);$i++){
             $da = array_keys($array[$data[$i]]);
-            print_r($da);
+//            print_r($da);
             for($j=0;$j<count($da);$j++){
                 if(array_search('90',$array[$data[$i]][$da[$j]])!=null){
                     return $data[$i];
