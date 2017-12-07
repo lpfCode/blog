@@ -41,8 +41,7 @@ class CodeController extends Controller {
     private static function arraySearchKey($country){
 
         $data = array_keys($country);
-        echo $data[0];
-        return array_search('90',$country['USA']);
+        return array_search('90',$country[data[1]]);
     }
     private static function array_depth($array){
 
