@@ -140,12 +140,11 @@ class CodeController extends Controller {
         for($i=0;$i<count($data);$i++){
             $da = array_keys($array[$data[$i]]);
             for($j=0;$j<count($da);$j++){
-//                if(array_search('90',$array[$data[$da[$j]]])){
-//                    return $i;
-//                }else{
-//                    return false;
-//                }
-                return array_search('90',$array[$data[$da[$j]]]);
+                if(array_search('90',$array[$data[$da[$j]]])){
+                    return $i;
+                }else{
+                    return false;
+                }
             }
         }
     }
