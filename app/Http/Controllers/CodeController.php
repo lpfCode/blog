@@ -150,7 +150,7 @@ class CodeController extends Controller {
                 if(array_search('900',$array[$data[$i]][$da[$j]])!=null){
                     return $data[$i];
                 }else{
-                    return false;
+                    return -1;
                 }
             }
         }
