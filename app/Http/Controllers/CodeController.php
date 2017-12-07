@@ -137,8 +137,8 @@ class CodeController extends Controller {
     private static function arrayThreeSearchKey($array){
 
         $data = array_keys($array);
-        print_r($data[0]);
-        return count($data[0]);
+        print_r($array[$data[0]]);
+        return count($array[$data[0]]);
     }
     private static function array_depth($array){
 
