@@ -148,8 +148,9 @@ class CodeController extends Controller {
                 if(array_search('90',$array[$data[$i]][$da[$j]])!=null){
                     return $data[$i];
                     break;
+                }else{
+                    return -1;
                 }
-                return -1;
             }
         }
     }
