@@ -14,7 +14,7 @@ class CodeController extends Controller {
 
     public function index(){
 
-        return view('code.program');
+        return view('code.index');
     }
     public function MuliArray(){
 
