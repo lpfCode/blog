@@ -6,7 +6,7 @@
  * Time: 上午11:57
  */
 
-namespace App\util;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
