@@ -33,12 +33,10 @@ class CodeController extends Controller {
             ]
         ];
         $num = $this->array_depth($country);
-        echo "$num";
         return $num;
     }
     private static function array_depth($array){
 
-        echo "hello!";
 
         if(!is_array($array)) return 0;
         $max_depth = 1;
