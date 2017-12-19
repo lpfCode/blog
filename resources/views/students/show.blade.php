@@ -12,9 +12,7 @@
                     type:'get',
                     url:'/st/destroy?id='+stId,
                     success:function (data) {
-                        if(data.result=="success"){
-                            $("#tr_"+id).remove();
-                        }
+                        $("#tr_"+id).remove();
                     }
                 });
             }
