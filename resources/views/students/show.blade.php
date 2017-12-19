@@ -12,8 +12,7 @@
                     type:'get',
                     url:'/st/destroy?id='+stId,
                     success:function (data) {
-                        alert("jjjjj");
-                        $("#tr_"+id).remove();
+                        $("#tr_"+stId).remove();
                     }
                 });
             }
