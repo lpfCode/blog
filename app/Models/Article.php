@@ -27,6 +27,7 @@ class Article extends Model {
     //单例模式结束
     public function findArticleByStId($stId){
 
-        Redis::set('$stid',$this->where('stId',$stId)->count());
+        return $this->where('stId',$stId)->count();
+//        Redis::set('$stid',$this->where('stId',$stId)->count());
     }
 }
