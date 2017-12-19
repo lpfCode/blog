@@ -8,13 +8,16 @@
     <div class="container">
         <div class="col-md-offset-3 col-md-6" style="width: 50%;height: 50%">
             <form class="form-horizontal" action="/user/login" method="post">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="用户名">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input id="userName" type="text" class="form-control" placeholder="用户名" aria-describedby="basic-addon1">
                 </div>
-                <div class="form-group help">
-                    <input type="password" class="form-control" id="pass" name="pass" placeholder="密　码">
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input id="passWord" type="text" class="form-control" placeholder="密码" aria-describedby="basic-addon1">
                 </div>
-                <div class="form-group">
+                <div class="form-group" align="center">
                     <button type="submit" class="btn btn-default">登录</button>
                 </div>
             </form>
