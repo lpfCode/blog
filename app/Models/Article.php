@@ -10,6 +10,7 @@ namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Redis;
 
 class Article extends Model {
 
@@ -24,4 +25,8 @@ class Article extends Model {
         return self::$_instance;
     }
     //单例模式结束
+    public function findArticleByStId($stId){
+
+        Redis::set('$stid',$this->where('stId',$stId)->count());
+    }
 }

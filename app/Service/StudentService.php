@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Service;
+use App\Models\Article;
 use App\Models\Student;
 
 class StudentService{
@@ -53,5 +54,13 @@ class StudentService{
 //     查询所有
      public function selectAll(){
          return Student::getInstance()->findAll();
+     }
+//     查询每个学生阅读的文章数量
+     public function selectByStId(){
+
+         $stId = Student::getInstance()->findId();
+         echo "$stId"."<br>";
+         $count = Article::getInstance()->findArticleByStId($stId);
+         echo "$count";
      }
 }

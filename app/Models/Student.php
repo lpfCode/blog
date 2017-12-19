@@ -52,5 +52,9 @@ class Student extends Model{
 
         return Student::all();
     }
+//    查询学生Id
+    public function findId(){
+        return $this->select('id')->get();
+    }
 }
 

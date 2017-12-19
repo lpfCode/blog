@@ -20,8 +20,10 @@ class StudentController extends Controller
 //        $st = new Student();
 //        $st->orderBy('id','desc')->get();
           $st = StudentService::getInstance()->selectAll();
+          $ceshi = StudentService::getInstance()->selectByStId();
+          echo "$ceshi";
 //        $st = Student::paginate(6);
-        return View::make('students.show')->with('data',['info'=>$st,'key'=>null,'value'=>null]);
+//        return View::make('students.show')->with('data',['info'=>$st,'key'=>null,'value'=>null]);
     }
     //新增跳转
     public function create(){

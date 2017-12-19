@@ -21,5 +21,4 @@ class ArticleService{
         return self::$_instance;
     }
     //单例模式结束
-
 }
