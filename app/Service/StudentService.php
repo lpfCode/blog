@@ -63,7 +63,7 @@ class StudentService{
 //         echo json_decode($stId[0])->id;
          for($i=0;$i<count($stId);$i++){
              $count = Article::getInstance()->findArticleByStId(json_decode($stId[$i])->id);
-             echo "$count";
+             return "$count";
          }
      }
 }
