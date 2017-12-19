@@ -50,4 +50,8 @@ class StudentService{
 
          Student::getInstance()->removeByParam($param,$value);
      }
+//     查询所有
+     public function findAll(){
+         return Student::getInstance()->findAll();
+     }
 }

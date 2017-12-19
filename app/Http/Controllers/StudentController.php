@@ -19,7 +19,8 @@ class StudentController extends Controller
 //        $st = Student::all();
 //        $st = new Student();
 //        $st->orderBy('id','desc')->get();
-        $st = Student::paginate(6);
+          $st = StudentService::getInstance()->selectAll();
+//        $st = Student::paginate(6);
         return View::make('students.show')->with('data',['info'=>$st,'key'=>null,'value'=>null]);
     }
     //新增跳转

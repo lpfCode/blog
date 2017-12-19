@@ -47,4 +47,9 @@ class Student extends Model{
 
         $this->where($param,$value)->delete();
     }
+//    查询所有
+    public function findAll(){
+        return Student::all();
+    }
 }
+

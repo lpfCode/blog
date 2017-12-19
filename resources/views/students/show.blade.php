@@ -44,6 +44,7 @@
                     <td>年龄</td>
                     <td>科目</td>
                     <td>成绩</td>
+                    <td>文章</td>
                     <td>操作</td>
                 </tr>
             </thead>
@@ -55,6 +56,7 @@
                         <td>{{ $value->age }}</td>
                         <td>{{ $value->obj}}</td>
                         <td>{{ $value->score }}</td>
+                        <td>12</td>
                         <td>
                             <a class="btn btn-small btn-success" href="/st/destroy?id={{ $value->id }}">删除</a>
                             <a class="btn btn-small btn-info" href="/st/edit?id={{ $value->id }}">编辑</a>
@@ -63,7 +65,7 @@
                 @endforeach
             </tbody>
         </table>
-        <div align="right"><tr>{{$data['info']->links()}}</tr></div>
+        {{--<div align="right"><tr>{{$data['info']->links()}}</tr></div>--}}
     </div>
 </body>
 </html>
