@@ -71,7 +71,7 @@
                         <td>{{ $value->age }}</td>
                         <td>{{ $value->obj}}</td>
                         <td>{{ $value->score }}</td>
-                        <td>12</td>
+                        <td>{{ $value->num }}</td>
                         <td align="center">
                             {{--<a class="btn btn-small btn-success" href="/st/destroy?id={{ $value->id }}">删除</a>--}}
                             <a class="btn btn-small btn-success" href="javascript:void(0)" onclick="deleteById({{$value->id}})">删除</a>
