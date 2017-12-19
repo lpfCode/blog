@@ -6,15 +6,11 @@
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         function deleteById(stId) {
-            alert(stId);
             flag = confirm("是否要删除这条数据？");
             if(flag){
                 $.ajax({
                     type:'get',
                     url:'/st/destroy?id='+stId
-//                success:function (result) {
-//
-//                }
                 });
             }
         }
