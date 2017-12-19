@@ -12,7 +12,6 @@
                     type:'get',
                     url:'/st/destroy?id='+stId,
                     success:function (data) {
-                        $("#tr"+stId).hide();
                         $("#tr"+stId).remove();
                     }
                 });
@@ -66,7 +65,7 @@
             </thead>
             <tbody>
                 @foreach($data['info'] as $key => $value)
-                    <tr>
+                    <tr id="tr{{$value->id}}">
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->age }}</td>
