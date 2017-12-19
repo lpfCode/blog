@@ -68,6 +68,9 @@ class StudentController extends Controller
     public function destroy(Request $request){
         $id = $request->input('id');
         StudentService::getInstance()->deleteByParam('id',$id);
+        return response()->json(array(
+            result => "success"
+        ));
 //        Session::flash('message','删除成功');
 //        return Redirect::to('st');
     }
