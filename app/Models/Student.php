@@ -58,7 +58,8 @@ class Student extends Model{
     }
 //    按照学生ID更新文章数量
     public function insertById($id,$count){
-        $this->where('id',$id)->update('num',$count);
+//        $this->where('id',$id)->update('num',$count);
+        DB::update('update students set num = ? where id = ?',[$count,$id]);
     }
 }
 
