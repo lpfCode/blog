@@ -56,5 +56,9 @@ class Student extends Model{
     public function findId(){
         return $this->select('id')->get();
     }
+//    按照学生ID插入文章数量
+    public function insertById($id,$count){
+        $this->where('id',$id)->insert('num',$count);
+    }
 }
 
