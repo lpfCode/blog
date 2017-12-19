@@ -59,7 +59,8 @@ class StudentService{
      public function selectByStId(){
 
          $stId = Student::getInstance()->findId();
-         echo "$stId"."<br>";
+         echo count($stId)."<br>";
+         echo json_decode($stId[0])->id;
          $count = Article::getInstance()->findArticleByStId($stId);
          echo "$count";
      }

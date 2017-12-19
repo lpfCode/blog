@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->integer('age');
             $table->string('obj',255);
             $table->integer('score');
+            $table->integer('num');
             $table->timestamps();
         });
     }
