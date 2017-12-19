@@ -70,8 +70,8 @@ return [
     |
     */
 
-    'connection' => null,
-
+//    'connection' => null,
+    'connection' => 'session',
     /*
     |--------------------------------------------------------------------------
     | Session Database Table
