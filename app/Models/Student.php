@@ -49,7 +49,7 @@ class Student extends Model{
     }
 //    查询所有
     public function findAll(){
-        
+
         return Student::all();
     }
 }

@@ -3,6 +3,22 @@
 <head>
     <title>数据库的基本操作</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        function deleteById(stId) {
+            alert(stId);
+            flag = confirm("是否要删除这条数据？");
+            if(flag){
+                $.ajax({
+                    type:'get',
+                    url:'/st/destroy?id='+stId
+//                success:function (result) {
+//
+//                }
+                });
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -44,8 +60,8 @@
                     <td>年龄</td>
                     <td>科目</td>
                     <td>成绩</td>
-                    <td>文章</td>
-                    <td>操作</td>
+                    <td>阅读文章数量</td>
+                    <td align="center">操作</td>
                 </tr>
             </thead>
             <tbody>
@@ -57,8 +73,9 @@
                         <td>{{ $value->obj}}</td>
                         <td>{{ $value->score }}</td>
                         <td>12</td>
-                        <td>
-                            <a class="btn btn-small btn-success" href="/st/destroy?id={{ $value->id }}">删除</a>
+                        <td align="center">
+                            {{--<a class="btn btn-small btn-success" href="/st/destroy?id={{ $value->id }}">删除</a>--}}
+                            <a class="btn btn-small btn-success" href="javascript:void(0)" onclick="deleteById({{$value->id}})">删除</a>
                             <a class="btn btn-small btn-info" href="/st/edit?id={{ $value->id }}">编辑</a>
                         </td>
                     </tr>
