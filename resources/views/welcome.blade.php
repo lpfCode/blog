@@ -65,7 +65,7 @@
         </style>
     </head>
     <body>
-        <div align="right"><?php echo $_SESSION['name'];?></div>
+        <div align="right"><?php echo '用户名：'.$_SESSION['name'];?></div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
