@@ -9,7 +9,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 100px;
-        width: 20em;
+        /*width: 20em;*/
     }
 </style>
 <body>
