@@ -57,7 +57,7 @@
     <div class="container">
         <div class="col-md-offset-3 col-md-6" style="width: 50%;height: 50%">
             <form class="form-horizontal" id="regForm" method="post" action="/user/saveUser">
-                {{ csrf_field() }}}
+                {{ csrf_field() }}
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">@</span>
                     <input id="name" type="text" name="name" class="form-control" placeholder="用户名" aria-describedby="basic-addon1">
