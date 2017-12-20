@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<>
+<head>
     <title>注册页面</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <<script src="../js/jquery-3.2.1.min.js"></script>
