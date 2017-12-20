@@ -53,6 +53,6 @@ class UserController extends Controller{
         ];
 //        UserService::getInstance()->insertUser($arr);
         Session::flash('message','注册成功可以登陆啦！');
-        return view('user.login');
+        return Redirect::to('/');
     }
 }
