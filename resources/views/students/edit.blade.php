@@ -37,6 +37,7 @@
 </head>
 <body>
 <div class="container">
+    <div align="right"><?php echo '用户名：'.$_SESSION['name'];?></div>
     <nav class="navbar navbar-inverse">
         <div class="navbar-header">
             <a class="navbar-brand" href="{{ URL::to('st') }}">首页</a>
