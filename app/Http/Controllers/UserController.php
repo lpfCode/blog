@@ -55,6 +55,7 @@ class UserController extends Controller{
         ];
         UserService::getInstance()->insertUser($arr);
         Session::flash('message','注册成功可以登陆啦！');
+        dd(1212223);
         return view('user.log');
     }
 }
