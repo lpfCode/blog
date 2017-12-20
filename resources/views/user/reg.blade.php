@@ -35,7 +35,9 @@
             var name = $("*[name='name']").val();
             var pass = $("*[name='pass']").val();
             var repass = $("*[name='repass']").val();
-            if(flag&&name!=null&&pass!=null&&pass===repass){
+            if(name!=null&&pass!=null&&pass===repass){
+                alert(name);
+                alert(name!=null);
                 $.ajax({
                     type:'post',
                     url:'/user/saveUser',
