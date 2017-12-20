@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Service\UserService;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 class UserController extends Controller{
@@ -55,6 +56,5 @@ class UserController extends Controller{
         Session::flash('message','注册成功可以登陆啦！');
         echo $this->name;
         return Redirect::to('user/login');
-//        return view('user.login');
     }
 }
