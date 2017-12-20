@@ -32,6 +32,6 @@ class Article extends Model {
     }
     //删除按stId
     public function deleteByStId($value){
-        $this->where('stId',$value)->delete();
+        return $this->where('stId',$value)->delete();
     }
 }

@@ -53,10 +53,12 @@ class StudentService{
          //要删除关联表需要使用事务
          DB::beginTransaction();
          $result = Student::getInstance()->removeByParam($param,$value);
+         echo '1';
          if(!$result){
              DB::rollBack();
          }else{
              $res = Article::getInstance()->deleteByStId($value);
+             echo '2';
              if(!$res){
                  DB::rollBack();
              }
