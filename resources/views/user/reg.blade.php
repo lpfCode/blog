@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<>
     <title>注册页面</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <<script src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
-        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         $(document).ready(function () {
            $("#name").blur(function () {
               $.ajax({
@@ -28,6 +27,9 @@
               }
            });
         });
+    </script>
+    <script type="text/javascript">
+        $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         function reg() {
             flag = confirm("是否确认要提交？");
             var name = $("*[name='name']").val();
@@ -68,11 +70,11 @@
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">@</span>
                     <input id="repass" type="password" name="repass" class="form-control" placeholder="确认密码" aria-describedby="basic-addon1">
-                    <div id="errorRepass" style="color:red;display:inline;"></div>
                 </div>
+                <div id="errorRepass" style="color:red;display:inline;"></div>
                 <br>
                 <div class="form-group" align="center">
-                    <button type="submit" class="btn btn-default" onclick="reg()">提交</button>
+                    <button class="btn btn-default" onclick="reg()">提交</button>
                 </div>
             </form>
         </div>
