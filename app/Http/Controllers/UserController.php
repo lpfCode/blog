@@ -21,7 +21,7 @@ class UserController extends Controller{
         $this->name = $request->input('name');
         $this->pass = $request->input('pass');
     }
-    public function login(Request $request){
+    public function login(){
 
         $count = UserService::getInstance()->findUserByNP($this->name,$this->pass);
         if($count>0){
