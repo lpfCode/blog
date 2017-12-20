@@ -33,7 +33,6 @@ class User extends Model {
     }
     //添加用户
     public function insertByArr($arr){
-        echo "model";
         $this->insert($arr);
     }
 }
