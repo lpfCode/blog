@@ -39,7 +39,8 @@
                 $.ajax({
                     type:'post',
                     url:'/user/saveUser',
-                    data:{name:name,pass:pass}
+                    data:{name:name,pass:pass},
+                    dataType:'json'
                 });
             }
         }
