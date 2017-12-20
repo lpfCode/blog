@@ -51,8 +51,9 @@ class UserController extends Controller{
             'name' => $this->name,
             'pass' => $this->pass
         ];
-//        UserService::getInstance()->insertUser($arr);
+        UserService::getInstance()->insertUser($arr);
         Session::flash('message','注册成功可以登陆啦！');
-        return Redirect::to('/');
+        echo $this->name;
+        return Redirect::to('user.login');
     }
 }
