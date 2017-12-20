@@ -23,6 +23,8 @@
               var repass = $(this).val();
               if(repass!=pass){
                   $("#errorRepass").html("两次输入的密码不一致");
+              }else{
+                  $("#errorRepass").html("密码正确");
               }
            });
         });
