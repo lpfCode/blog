@@ -14,7 +14,6 @@
                   data:{name:$(this).val()},
                   dataType:'json',
                   success:function (data) {
-                      alert(data.msg);
                       $("#errorName").html(data.msg);
                   }
               });
@@ -56,8 +55,8 @@
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">@</span>
                     <input id="name" type="text" name="name" class="form-control" placeholder="用户名" aria-describedby="basic-addon1">
-                    <div id="errorName" style="color:red;display:inline;"></div>
                 </div>
+                <div id="errorName" style="color:red;display:inline;"></div>
                 <br>
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">@</span>
