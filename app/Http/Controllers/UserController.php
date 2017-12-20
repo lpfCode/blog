@@ -47,11 +47,7 @@ class UserController extends Controller{
         }
     }
     public function saveUser(Request $request){
-
-        var_dump(pppppppp);
-
         $arr = [
-
             'name' => $this->name,
             'pass' => $this->pass
         ];

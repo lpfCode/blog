@@ -43,4 +43,4 @@ Route::get('/code/muliArray', 'CodeController@MuliArray');
 Route::post('/user/login', 'UserController@login');
 Route::get('/user/reg', 'UserController@reg');
 Route::get('/user/jyUser', 'UserController@jyUser');
-Route::post('/usr/saveUser', 'UserController@saveUser');
+Route::post('/user/saveUser', 'UserController@saveUser');
