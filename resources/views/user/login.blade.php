@@ -29,6 +29,7 @@
                     <span class="input-group-addon" id="basic-addon1">@</span>
                     <input id="pass" type="password" name="pass" class="form-control" placeholder="密码" aria-describedby="basic-addon1">
                 </div>
+                <br>
                 <div class="form-group" align="center">
                     <button type="submit" class="btn btn-default">登录</button>
                 </div>
