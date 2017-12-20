@@ -45,7 +45,7 @@ class Student extends Model{
 //    根据字段删除记录
     public function removeByParam($param,$value){
 
-        $this->where($param,$value)->delete();
+        return $this->where($param,$value)->delete();
     }
 //    查询所有
     public function findAll(){

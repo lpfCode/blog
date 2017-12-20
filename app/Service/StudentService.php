@@ -3,6 +3,8 @@
 namespace App\Service;
 use App\Models\Article;
 use App\Models\Student;
+use Illuminate\Support\Facades\DB;
+use Mockery\Exception;
 
 class StudentService{
 
@@ -48,8 +50,18 @@ class StudentService{
      }
 //     按照字段删除记录
      public function deleteByParam($param,$value){
-
-         Student::getInstance()->removeByParam($param,$value);
+         //要删除关联表需要使用事务
+         DB::beginTransaction();
+         $result = Student::getInstance()->removeByParam($param,$value);
+         if(!$result){
+             DB::rollBack();
+         }else{
+             $res = Article::getInstance()->deleteByStId($value);
+             if(!$res){
+                 DB::rollBack();
+             }
+         }
+         DB::commit();
      }
 //     查询所有
      public function selectAll(){

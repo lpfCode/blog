@@ -30,4 +30,8 @@ class Article extends Model {
         return $this->where('stId',$stId)->count();
 //        Redis::set('$stid',$this->where('stId',$stId)->count());
     }
+    //删除按stId
+    public function deleteByStId($value){
+        $this->where('stId',$value)->delete();
+    }
 }

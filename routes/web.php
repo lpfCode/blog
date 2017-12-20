@@ -40,3 +40,7 @@ Route::any('/wx', 'WeiXinController@index');
 Route:any('/wx/api', 'WeiXinController@api');
 Route::get('/code', 'CodeController@index');
 Route::get('/code/muliArray', 'CodeController@MuliArray');
+Route::post('/user/login', 'UserController@login');
+Route::get('/user/reg', 'UserController@reg');
+Route::get('/user/jyUser', 'UserController@jyUser');
+Route::post('/usr/saveUser', 'UserController@saveUser');
