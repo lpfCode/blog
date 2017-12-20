@@ -8,12 +8,12 @@
         $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         $(document).ready(function () {
            $("#name").blur(function () {
-               alert($(this).val());
               $.ajax({
                   type:'get',
                   url:'/user/jyUser',
                   data:{name:$(this).val()},
                   success:function (data) {
+                      alert(data);
                       $("#errorName").html(data);
                   }
               });
@@ -68,6 +68,7 @@
                     <input id="repass" type="password" name="repass" class="form-control" placeholder="确认密码" aria-describedby="basic-addon1">
                     <div id="errorRepass" style="color:red;display:inline;"></div>
                 </div>
+                <br>
                 <div class="form-group" align="center">
                     <button type="submit" class="btn btn-default" onclick="reg()">提交</button>
                 </div>
