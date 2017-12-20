@@ -75,7 +75,7 @@
                 <div id="errorRepass" style="color:red;display:inline;"></div>
                 <br>
                 <div class="form-group" align="center">
-                    <input type="button" class="btn btn-default" onclick="reg()">
+                    <input type="button" class="btn btn-default" onclick="reg()" value="提交">
                 </div>
             </form>
         </div>
