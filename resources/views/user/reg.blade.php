@@ -3,7 +3,7 @@
 <head>
     <title>注册页面</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <<script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
            $("#name").blur(function () {
@@ -75,7 +75,7 @@
                 <div id="errorRepass" style="color:red;display:inline;"></div>
                 <br>
                 <div class="form-group" align="center">
-                    <button class="btn btn-default" onclick="reg()">提交</button>
+                    <input type="button" class="btn btn-default" onclick="reg()">
                 </div>
             </form>
         </div>
