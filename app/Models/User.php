@@ -32,7 +32,8 @@ class User extends Model {
         return $this->where('name',$name)->count();
     }
     //添加用户
-    public function insert($arr){
+    public function insertByArr($arr){
+        echo "model";
         $this->insert($arr);
     }
 }

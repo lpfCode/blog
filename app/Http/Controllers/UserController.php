@@ -47,15 +47,13 @@ class UserController extends Controller{
             ));
         }
     }
-    public function saveUser(Request $request){
+    public function saveUser(){
         $arr = [
             'name' => $this->name,
             'pass' => $this->pass
         ];
-//        UserService::getInstance()->insertUser($arr);
+        UserService::getInstance()->insertUser($arr);
         Session::flash('message','注册成功可以登陆啦！');
-        echo $this->name;
         return view('user.login');
-//        return Redirect::to('login');
     }
 }

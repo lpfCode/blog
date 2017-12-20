@@ -34,6 +34,7 @@ class UserService{
     }
     //增加用户
     public function insertUser($arr){
-        return User::getInstance()->insert($arr);
+        echo "service";
+        return User::getInstance()->insertByArr($arr);
     }
 }
