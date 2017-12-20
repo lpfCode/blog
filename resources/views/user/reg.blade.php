@@ -12,9 +12,10 @@
                   type:'get',
                   url:'/user/jyUser',
                   data:{name:$(this).val()},
+                  dataType:'json',
                   success:function (data) {
-                      alert(data);
-                      $("#errorName").html(data);
+                      alert(data.msg);
+                      $("#errorName").html(data.msg);
                   }
               });
            });
