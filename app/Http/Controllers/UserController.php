@@ -25,7 +25,8 @@ class UserController extends Controller{
 
         $count = UserService::getInstance()->findUserByNP($this->name,$this->pass);
         if($count>0){
-            $_SESSION['name'] = $this->name;
+            Session::put('name',$this->name);
+//            $_SESSION['name'] = $this->name;
             return view('welcome');
         }else{
             Session::flash('message','用户名或密码错误');
