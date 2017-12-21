@@ -7,9 +7,7 @@
 <body>
     <div class="container">
         <div align="right">
-            <?php if(isset($_SESSION['name'])){
-                echo '用户名：'.$_SESSION['name'];
-            }?>
+            @if (isset($_SESSION['name'])) {echo '用户名：'.$_SESSION['name']}@endif
         </div>
         <nav class="navbar navbar-inverse">
             <div class="navbar-header">

@@ -22,8 +22,7 @@
 <body>
     <div class="container">
         <div align="right">
-            @if (isset($_SESSION['name'])) {echo '用户名：'.$_SESSION['name']} @else {echo ''}@endif
-
+            @if (isset($_SESSION['name'])) {echo '用户名：'.$_SESSION['name']}@endif
         </div>
         <nav class="navbar navbar-inverse">
             <div class="navbar-header">

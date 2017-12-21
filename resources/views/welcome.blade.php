@@ -66,9 +66,7 @@
     </head>
     <body>
         <div align="right">
-            <?php if(isset($_SESSION['name'])){
-                echo '用户名：'.$_SESSION['name'];
-            }?>
+            @if (isset($_SESSION['name'])) {echo '用户名：'.$_SESSION['name']}@endif
         </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
