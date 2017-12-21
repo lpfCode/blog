@@ -16,7 +16,6 @@ class StudentController extends Controller
 {
     //查寻全部
     public function index(){
-	  dd(Session::get('name'));die;
 //        $st = Student::all();
 //        $st = new Student();
 //        $st->orderBy('id','desc')->get();
