@@ -56,6 +56,8 @@
 <body>
     <div class="container">
         <div class="col-md-offset-3 col-md-6" style="width: 50%;height: 50%">
+            <h3>新用户注册</h3>
+            <br>
             <form class="form-horizontal" id="regForm" method="post" action="/user/saveUser">
                 {{ csrf_field() }}
                 <div class="input-group">
