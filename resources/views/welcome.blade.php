@@ -66,7 +66,7 @@
     </head>
     <body>
         <div align="right">
-            @if (isset($_SESSION['name'])) 用户名：{{$_SESSION['name']}};@endif
+            @if (Session::get('name')!==null) 用户名：{{Session::get('name')}};@endif
         </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
