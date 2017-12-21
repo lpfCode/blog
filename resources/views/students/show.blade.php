@@ -22,7 +22,7 @@
 <body>
     <div class="container">
         <div align="right">
-            @if (Session::get('name')!==null) 用户名：{{Session::get('name')}};@endif
+            @if (Session::get('name')!==null) 用户名：{{Session::get('name')}}@endif
         </div>
         <nav class="navbar navbar-inverse">
             <div class="navbar-header">
