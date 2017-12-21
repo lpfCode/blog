@@ -38,7 +38,7 @@
 <body>
 <div class="container">
     <div align="right">
-        @if (isset($_SESSION['name'])) 用户名：{{$_SESSION['name']}};@endif
+        @if (Session::get('name')!==null) 用户名：{{Session::get('name')}};@endif
     </div>
     <nav class="navbar navbar-inverse">
         <div class="navbar-header">
