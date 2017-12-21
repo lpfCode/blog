@@ -29,6 +29,7 @@ class UserController extends Controller{
             return view('welcome');
         }else{
             Session::flash('message','用户名或密码错误');
+            return view('user.login');
         }
     }
     public function reg(){
