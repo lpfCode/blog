@@ -78,7 +78,7 @@ class StudentService{
 //         echo json_decode($stId[0])->id;
          for($i=0;$i<count($stId);$i++){
              $count = Article::getInstance()->findArticleByStId(json_decode($stId[$i])->id);
-             Student::getInstance()->insertById(json_decode($stId[$i])->id,$count);
+             Student::getInstance()->updatetById(json_decode($stId[$i])->id,$count);
              array_push($arr,$count);
          }
          return $arr;
