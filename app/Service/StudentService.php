@@ -74,15 +74,18 @@ class StudentService{
      public function selectByStId(){
 
          $stId = Student::getInstance()->findId();
+//         if(isset($arr)){
+//             return $arr;
+//         }
          $arr = array();
 //         echo count($stId)."<br>";
 //         echo json_decode($stId[0])->id;
          for($i=0;$i<count($stId);$i++){
              $count = Article::getInstance()->findArticleByStId(json_decode($stId[$i])->id);
-             Redis::set('json_decode($stId[$i])->id',$count);
+//             Redis::set('json_decode($stId[$i])->id',$count);
              Student::getInstance()->updatetById(json_decode($stId[$i])->id,$count);
-//             array_push($arr,$count);
-             array_push($arr,Redis::get('json_decode($stId[$i])->id'));
+             array_push($arr,$count);
+//             array_push($arr,Redis::get('json_decode($stId[$i])->id'));
          }
          return $arr;
      }
