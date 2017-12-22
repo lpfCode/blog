@@ -4,6 +4,7 @@ namespace App\Service;
 use App\Models\Article;
 use App\Models\Student;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 use Mockery\Exception;
 
 class StudentService{
@@ -78,8 +79,10 @@ class StudentService{
 //         echo json_decode($stId[0])->id;
          for($i=0;$i<count($stId);$i++){
              $count = Article::getInstance()->findArticleByStId(json_decode($stId[$i])->id);
+             Redis::set('json_decode($stId[$i])->id',$count);
              Student::getInstance()->updatetById(json_decode($stId[$i])->id,$count);
-             array_push($arr,$count);
+//             array_push($arr,$count);
+             array_push($arr,Redis::get('json_decode($stId[$i])->id'));
          }
          return $arr;
      }

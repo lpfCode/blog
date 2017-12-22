@@ -21,7 +21,7 @@ class StudentController extends Controller
 //        $st->orderBy('id','desc')->get();
           $st = StudentService::getInstance()->selectAll();
           $ceshi = StudentService::getInstance()->selectByStId();
-//          print_r($ceshi);
+          print_r($ceshi);
 //        $st = Student::paginate(6);
         return View::make('students.show')->with('data',['info'=>$st,'key'=>null,'value'=>null]);
     }
